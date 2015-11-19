@@ -39,25 +39,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" id="section1">Dashboard</a>
+                    <a href="#" id="section1">Section One</a>
                 </li>
                 <li>
-                    <a href="#">Shortcuts</a>
+                    <a href="#" id="section2">Section Two</a>
                 </li>
                 <li>
-                    <a href="#">Overview</a>
-                </li>
-                <li>
-                    <a href="#">Events</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
+                    <a href="#" id="section3">Section Three</a>
                 </li>
             </ul>
             <a href="#">
@@ -71,10 +59,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1>Simple Sidebar</h1>
-                        <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
-                        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
-                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                        <h1>Home</h1>
                     </div>
                 </div>
             </div>
@@ -104,6 +89,14 @@
     
     $("#section1").click(function(e) {        
 	    $("#page-content-wrapper").load("section1.html");
+    });
+    
+    $("#section2").click(function(e) {        
+	    $("#page-content-wrapper").load("section2.html");
+    });
+    
+    $("#section3").click(function(e) {        
+	    $("#page-content-wrapper").load("section3.html");
     });
     </script>
 
