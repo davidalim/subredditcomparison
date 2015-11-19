@@ -34,12 +34,12 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="#menu-toggle" id="menu-toggle">
-                        Hide
+                    <a href="#menu-toggle" id="menu-title">
+                        Menu
                     </a>
                 </li>
                 <li>
-                    <a href="#">Dashboard</a>
+                    <a href="#" id="section1">Dashboard</a>
                 </li>
                 <li>
                     <a href="#">Shortcuts</a>
@@ -60,6 +60,9 @@
                     <a href="#">Contact</a>
                 </li>
             </ul>
+            <a href="#">
+            	<div class="show-hide-bar" id="menu-toggle"></div>
+            </a>
         </div>
         <!-- /#sidebar-wrapper -->
 
@@ -93,9 +96,14 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
         $(".sidebar-nav").toggleClass("toggled");
+        $(".show-hide-bar").toggleClass("toggled");
         $("#menu-toggle").text(function(i, text){
-          return text === "Show" ? "Hide" : "Show";
+          return text === "" ? "M" : "";
       	});
+    });
+    
+    $("#section1").click(function(e) {        
+	    $("#page-content-wrapper").load("section1.html");
     });
     </script>
 
