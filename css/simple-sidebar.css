@@ -107,8 +107,12 @@
     transition: all 0.5s ease;
 }
 
-#menu-bars-fade img.toggled {
+#menu-bars-fade img.top {
 	opacity: 0;
+}
+
+#menu-bars-fade img.toggled {
+	opacity: 1;
 }
 
 .sidebar-nav.toggled li{	
