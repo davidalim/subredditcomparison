@@ -90,6 +90,13 @@
         $(".show-hide-bar").toggleClass("toggled");
     });
     
+    $("#menu-title").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+        $(".sidebar-nav").toggleClass("toggled");
+        $(".show-hide-bar").toggleClass("toggled");
+    });
+    
     $("#section1").click(function(e) {        
 	    $("#page-content-wrapper").load("section1.html");
     });
