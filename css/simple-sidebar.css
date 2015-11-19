@@ -88,7 +88,7 @@
     height: 20px;
     width: 20px;
     right: -2px;
-    top: 10px;
+    top: 20px;
 }
 
 .menu-bars-right {
@@ -97,7 +97,7 @@
     height: 20px;
     width: 20px;
     right: 13px;
-    top: 10px;
+    top: 20px;
 }
 
 #menu-bars-fade img {
@@ -160,7 +160,7 @@
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
-    color: #fff;
+	color: #999999;
     background: none;
 }
 
