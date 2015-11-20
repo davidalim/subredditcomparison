@@ -21,9 +21,6 @@
 		                        <li style="background-color: red;"></li>
 		                        <li style="background-color: blue;"></li>
 		                        <li style="background-color: red;"></li>
-		                        <li style="background-color: blue;"></li>
-		                        <li style="background-color: red;"></li>
-		                        <li style="background-color: blue;"></li>
 		                    </ul>
 		                </div>
 						
@@ -41,9 +38,6 @@
 		                        <li><img id="cloud1" src='images/small/Christianity_wordcloud.png' data-zoom-image="images/large/Christianity_wordcloud.png"/></li>
 		                        <li><img id="cloud2" src='images/small/Islam_wordcloud.png' data-zoom-image="images/large/Islam_wordcloud.png"/></li>
 		                        <li><img id="cloud3" src='images/small/InCommon_wordcloud.png' data-zoom-image="images/large/InCommon_wordcloud.png"/></li>
-		                        <li><img id="cloud4" src='images/small/InCommon_wordcloud.png' data-zoom-image="images/large/InCommon_wordcloud.png"/></li>
-		                        <li><img src="_shared/img/img5.jpg" alt=""></li>
-		                        <li><img src="_shared/img/img6.jpg" alt=""></li>
 		                    </ul>
 		                </div>
 						
@@ -58,33 +52,37 @@
         
         
             <script>
-            	var max_index = 6;
+            	var max_index = 3;
             	var index = 1;
             	
             	function changeZoom(i) {
-            		$.removeData("#cloud" + index, 'elevateZoom');//remove zoom instance from image
-        			$('.zoomContainer').remove();
-				    $("#cloud" + index).removeClass("zoom");
-				    if(i>0 && i<max_index){
-				    	index = i;
-				    }
-				    $("#cloud" + index).addClass("zoom");
+	            		$.removeData("#cloud" + index, 'elevateZoom');//remove zoom instance from image
+	        			$('.zoomContainer').remove();
+					    $("#cloud" + index).removeClass("zoom");
+					    					    
+					    index = i;					    
+					    
+					    $("#cloud" + index).addClass("zoom");				    
+					    $('.zoom').elevateZoom({
+						     zoomType: "inner",
+						 	 cursor: "crosshair",
+						 	 zoomWindowFadeIn: 500,
+						  	 zoomWindowFadeOut: 750
+					    }); 
 				    
-				   $('.zoom').elevateZoom({
-					    zoomType: "inner",
-						cursor: "crosshair",
-						zoomWindowFadeIn: 500,
-						zoomWindowFadeOut: 750
-				   }); 
             	}
             	
-			    $(".next-left").click(function(e) {        
-				    $(".jcarousel-control-prev").click();
-				    changeZoom(index-1);
+			    $(".next-left").click(function(e) {  			    	
+            		if(index-1>0 && index-1<=max_index){      
+					    $(".jcarousel-control-prev").click();
+					    changeZoom(index-1);
+				    }
 			    });
-			    $(".next-right").click(function(e) {        
-				    $(".jcarousel-control-next").click();
-				    changeZoom(index+1);
+			    $(".next-right").click(function(e) {    
+			    	if(index+1>0 && index+1<=max_index){     
+					    $(".jcarousel-control-next").click();
+					    changeZoom(index+1);
+					}
 			    });			    
 			   
 			   
