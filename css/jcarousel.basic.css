@@ -1,14 +1,45 @@
 .nav-arrows-container {
 	width: 20px;
     display: inline-block;
+    position: relative;
 }
 
 .section-title {
 	display: inline-block;
 }
 
+.arrow-up-container, .arrow-down-container {
+	position: relative;
+	height: 13px;
+}
+
+.nav-arrow-up, .nav-arrow-down,
+.nav-arrow-up-accent, .nav-arrow-down-accent {	
+	position: absolute;
+	width: 18px;	
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
 .nav-arrow-up, .nav-arrow-down {
-	width: 18px;
+	z-index: 1;
+}
+
+.nav-arrow-up-accent, .nav-arrow-down-accent  {
+	z-index: 3;
+	opacity: 0;
+}
+
+.nav-arrows-container 
+a:hover .nav-arrow-up, a:hover .nav-arrow-down{
+	opacity: 0;
+}
+
+.nav-arrows-container 
+a:hover .nav-arrow-up-accent, a:hover .nav-arrow-down-accent{
+	opacity: 1;
 }
 
 .arrow-bar {

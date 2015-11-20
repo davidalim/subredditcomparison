@@ -155,14 +155,14 @@
 	    current_section = 3;
     });
     
-    $(document.body).on("click",".nav-arrow-down",function(e) {   
+    $(document.body).on("click",".arrow-down-container",function(e) {   
     	if(curent_section+1 <= max_section){    		
 		    current_section += 1;
 		    fadeContent("section" +current_section+".html");
     	}     
     });
     
-    $(document.body).on("click",".nav-arrow-up",function(e) {      
+    $(document.body).on("click",".arrow-up-container",function(e) {      
     	if(current_section-1 >= 0){    		
 		    current_section -= 1;
 		    fadeContent("section" +current_section+".html");
@@ -174,7 +174,7 @@
     
     current_section = 3;
      
-    $("#page-content-wrapper").load("section3.html");
+    $("#page-content-wrapper").load("section"+current_section+".html");
     
     
     setTimeout(
