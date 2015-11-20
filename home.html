@@ -174,13 +174,14 @@
     
     current_section = 0;
      
-    $("#page-content-wrapper").load("section"+current_section+".html");
     
     
     setTimeout(
 	  function() 
 	  {
-	    $("#menu-toggle").click();
+	    $("#menu-toggle").click();	  
+	    
+	    fadeContent("section"+current_section+".html");  
 	  }, 700);
     </script>
 
