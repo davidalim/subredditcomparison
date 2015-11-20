@@ -156,13 +156,13 @@
     });
     
     $(document.body).on("click",".arrow-down-container",function(e) {   
-    	if(curent_section+1 <= max_section){    		
+    	if(current_section+1 <= max_section){    		
 		    current_section += 1;
 		    fadeContent("section" +current_section+".html");
     	}     
     });
     
-    $(document.body).on("click",".arrow-up-container",function(e) {      
+    $(document.body).on("click",".arrow-up-container",function(e) {     
     	if(current_section-1 >= 0){    		
 		    current_section -= 1;
 		    fadeContent("section" +current_section+".html");
@@ -172,7 +172,7 @@
     
     //---- Initial States ----   
     
-    current_section = 3;
+    current_section = 0;
      
     $("#page-content-wrapper").load("section"+current_section+".html");
     
@@ -180,7 +180,7 @@
     setTimeout(
 	  function() 
 	  {
-	    //$("#menu-toggle").click();
+	    $("#menu-toggle").click();
 	  }, 700);
     </script>
 

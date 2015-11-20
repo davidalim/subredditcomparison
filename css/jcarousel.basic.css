@@ -43,27 +43,16 @@ a:hover .nav-arrow-up-accent, a:hover .nav-arrow-down-accent{
 }
 
 .arrow-bar {
-	width: 100%;
+	width: 75%;
     margin: 0 auto;
-    text-align: center;
+    position: relative;
 }
 
-.next-left, .next-right, .next-space{	
-	width: 50px;
-	height: 50px;
+.next-left, .next-right{	
+	font-size: 25px;
+	height: 55px;
 	display: inline-block;
-}
-
-.next-left {
-	background-color: red;
-}
-
-.next-space {
-	width: 10px;
-}
-
-.next-right {	
-	background-color: blue;
+	padding: 25px;
 }
 
 .panel-wrapper {

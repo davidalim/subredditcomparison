@@ -1,6 +1,124 @@
-<html>
-	
-	<div class="container-fluid">
-	            <h1>Section 2</h1>
-	</div>
-</html>
+<head>
+	    <script type="text/javascript" src="js/jcarousel.min.js"></script>	
+	    <script type="text/javascript" src="js/jcarousel.basic.js"></script>
+	    <script src="js/jquery.elevatezoom.js"></script>
+</head>
+<div class="container-fluid">
+    <div class="row">
+    		<div class="nav-title">
+    			<div class="nav-arrows-container">    
+    				<div class="arrow-up-container">
+    				<a href="#">
+    					<img class="nav-arrow-up" src='arrow_up.png'/>
+    					<img class="nav-arrow-up-accent" src='arrow_up_accent.png'/>
+    				</a>				
+    				</div>
+    				<div class="arrow-down-container">
+    				<a href="#">
+    					<img class="nav-arrow-down" src='arrow_down.png'/>
+    					<img class="nav-arrow-down-accent" src='arrow_down_accent.png'/>
+    				</a>    
+    				</div>				
+    			</div>
+    			
+    			<h1 class="section-title">Section 2</h1>
+    		</div>
+    		
+    		<div class="arrow-bar">
+	            <a href="#"><div class="next-left">Back</div></a>
+	            <a href="#"><div class="next-right">Next</div></a>
+            </div>
+        	<div class="panel-wrapper">
+	            
+	            <div class="panel-left">
+		            <div class="jcarousel-wrapper">
+		            	
+		                <div class="jcarousel">
+		                    <ul>
+		                        <li style="background-color: #333333;"></li>
+		                        <li style="background-color: #999999;"></li>
+		                        <li style="background-color: #333333;"></li>
+		                    </ul>
+		                </div>
+						
+		                <div class="jcarousel-control-prev"></div>	
+		                <div class="jcarousel-control-next"></div>
+		                
+		            </div>
+		         </div>
+	            
+	            <div class="panel-right">
+		             <div class="jcarousel-wrapper">
+		            	
+		                <div class="jcarousel">
+		                    <ul>
+		                        <li><img id="cloud1" src='images/small/Christianity_wordcloud.png' data-zoom-image="images/large/Christianity_wordcloud.png"/></li>
+		                        <li><img id="cloud2" src='images/small/Islam_wordcloud.png' data-zoom-image="images/large/Islam_wordcloud.png"/></li>
+		                        <li><img id="cloud3" src='images/small/InCommon_wordcloud.png' data-zoom-image="images/large/InCommon_wordcloud.png"/></li>
+		                    </ul>
+		                </div>
+						
+		                <div class="jcarousel-control-prev"></div>
+		                <div class="jcarousel-control-next"></div>
+		                    
+		            </div>
+	           </div>
+            
+            
+			</div>
+        
+        
+            <script>
+	        	var max_index = 3;
+	        	var index = 1;
+	        	
+	        	function changeZoom(i) {
+	        		$.removeData("#cloud" + index, 'elevateZoom');//remove zoom instance from image
+	    			$('.zoomContainer').remove();
+				    $("#cloud" + index).removeClass("zoom");
+				    					    	    
+				    
+				    $("#cloud" + i).addClass("zoom");				    
+				    $('.zoom').elevateZoom({
+					     zoomType: "inner",
+					 	 cursor: "crosshair",
+					 	 zoomWindowFadeIn: 500,
+					  	 zoomWindowFadeOut: 750
+				    }); 				    
+            	}
+            	
+			    $(".next-left").click(function(e) {  			    	
+            		if(index-1>0){     
+					    changeZoom(index-1); 
+					    $(".jcarousel-control-prev").click();
+					    index -= 1;
+				    }
+			    });
+			    $(".next-right").click(function(e) { 
+			    	if(index+1<=max_index){     
+					    changeZoom(index+1);
+					    $(".jcarousel-control-next").click();
+					    index +=  1;
+					}
+			    });			
+			    
+			    $(document).keydown(function(e) {
+				    switch(e.which) {
+				        case 37: // left
+				        	$(".next-left").click();
+				        break;				
+				
+				        case 39: // right
+				        	$(".next-right").click();
+				        break;
+				
+				        default: return; // exit this handler for other keys
+				    }
+				    e.preventDefault(); // prevent the default action (scroll / move caret)
+				});    
+			   
+			   
+			   changeZoom(index);
+            </script>
+    </div>
+</div>

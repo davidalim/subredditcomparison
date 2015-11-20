@@ -1,29 +1,44 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-12">
-            <h1>Section 1</h1>
-            
-            <div id="demo-canvas"></div>
-            
-            <script>
-            	var G = new jsnx.Graph();
-				G.addNode(1, {count: 12});
-				G.addNode(2, {count: 8});
-				G.addNode(3, {count: 15});
-				G.addEdgesFrom([[1,2],[2,3]]);
-				 
-				jsnx.draw(G, {
-				  element: '#demo-canvas',
-				  withLabels: true,
-				  nodeAttr: {
-				    r: function(d) {
-				      // `d` has the properties `node`, `data` and `G`
-				      return d.data.count;
-				    }
-				  }
-				});
-            </script>
-        </div>
+        <div class="nav-title">
+			<div class="nav-arrows-container">    
+				<div class="arrow-up-container">
+				<a href="#">
+					<img class="nav-arrow-up" src='arrow_up.png'/>
+					<img class="nav-arrow-up-accent" src='arrow_up_accent.png'/>
+				</a>				
+				</div>
+				<div class="arrow-down-container">
+				<a href="#">
+					<img class="nav-arrow-down" src='arrow_down.png'/>
+					<img class="nav-arrow-down-accent" src='arrow_down_accent.png'/>
+				</a>    
+				</div>				
+			</div>
+			
+			<h1 class="section-title">Section 1</h1>
+		</div>
+        
+        <div id="demo-canvas"></div>
+        
+        <script>
+        	var G = new jsnx.Graph();
+			G.addNode(1, {count: 12});
+			G.addNode(2, {count: 8});
+			G.addNode(3, {count: 15});
+			G.addEdgesFrom([[1,2],[2,3]]);
+			 
+			jsnx.draw(G, {
+			  element: '#demo-canvas',
+			  withLabels: true,
+			  nodeAttr: {
+			    r: function(d) {
+			      // `d` has the properties `node`, `data` and `G`
+			      return d.data.count;
+			    }
+			  }
+			});
+        </script>
     </div>
 </div>
 
