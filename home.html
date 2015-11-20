@@ -98,7 +98,7 @@
 
     <!-- Menu Toggle Script -->
     <script>    
-    
+        
     function toggle() {    	
         $("#wrapper").toggleClass("toggled");
         $(".sidebar-nav").toggleClass("toggled");
@@ -124,24 +124,56 @@
         toggle();
     });
     
-    $("#section0").click(function(e) {        
-	    $("#page-content-wrapper").load("section0.html");
-    });
+    var current_section = 0;
+    var max_section = 3;
     
+    function fadeContent(path){
+    	$('#page-content-wrapper').fadeOut('medium', function(){
+		    $('#page-content-wrapper').load(path, function(){
+		        $('#page-content-wrapper').fadeIn('medium');
+		    });
+		});
+    }
+    
+    $("#section0").click(function(e) {        
+	    fadeContent("section0.html");
+	    current_section = 0;
+    });
+        
     $("#section1").click(function(e) {        
-	    $("#page-content-wrapper").load("section1.html");
+	    fadeContent("section1.html");
+	    current_section = 1;
     });
     
     $("#section2").click(function(e) {        
-	    $("#page-content-wrapper").load("section2.html");
+	    fadeContent("section2.html");
+	    current_section = 2;
     });
     
     $("#section3").click(function(e) {        
-	    $("#page-content-wrapper").load("section3.html");
+	    fadeContent("section3.html");
+	    current_section = 3;
     });
     
+    $(document.body).on("click",".nav-arrow-down",function(e) {   
+    	if(curent_section+1 <= max_section){    		
+		    current_section += 1;
+		    fadeContent("section" +current_section+".html");
+    	}     
+    });
     
-    //---- Initial States ----    
+    $(document.body).on("click",".nav-arrow-up",function(e) {      
+    	if(current_section-1 >= 0){    		
+		    current_section -= 1;
+		    fadeContent("section" +current_section+".html");
+    	}  
+    });  
+    
+    
+    //---- Initial States ----   
+    
+    current_section = 3;
+     
     $("#page-content-wrapper").load("section3.html");
     
     

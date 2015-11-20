@@ -5,7 +5,14 @@
 </head>
 <div class="container-fluid">
     <div class="row">
-    		<h1>Section 3</h1>
+    		<div class="nav-title">
+    			<div class="nav-arrows-container">    
+    				<a href="#"><img class="nav-arrow-up" src='arrow_up.png'/></a>				
+    				<a href="#"><img class="nav-arrow-down" src='arrow_down.png'/></a>    				
+    			</div>
+    			
+    			<h1 class="section-title">Section 3</h1>
+    		</div>
     		
     		<div class="arrow-bar">
 	            <div class="next-left"></div>
@@ -52,38 +59,53 @@
         
         
             <script>
-            	var max_index = 3;
-            	var index = 1;
-            	
-            	function changeZoom(i) {
-	            		$.removeData("#cloud" + index, 'elevateZoom');//remove zoom instance from image
-	        			$('.zoomContainer').remove();
-					    $("#cloud" + index).removeClass("zoom");
-					    					    
-					    index = i;					    
-					    
-					    $("#cloud" + index).addClass("zoom");				    
-					    $('.zoom').elevateZoom({
-						     zoomType: "inner",
-						 	 cursor: "crosshair",
-						 	 zoomWindowFadeIn: 500,
-						  	 zoomWindowFadeOut: 750
-					    }); 
+	        	var max_index = 3;
+	        	var index = 1;
+	        	
+	        	function changeZoom(i) {
+	        		$.removeData("#cloud" + index, 'elevateZoom');//remove zoom instance from image
+	    			$('.zoomContainer').remove();
+				    $("#cloud" + index).removeClass("zoom");
+				    					    	    
 				    
+				    $("#cloud" + i).addClass("zoom");				    
+				    $('.zoom').elevateZoom({
+					     zoomType: "inner",
+					 	 cursor: "crosshair",
+					 	 zoomWindowFadeIn: 500,
+					  	 zoomWindowFadeOut: 750
+				    }); 				    
             	}
             	
 			    $(".next-left").click(function(e) {  			    	
-            		if(index-1>0 && index-1<=max_index){      
+            		if(index-1>0){     
+					    changeZoom(index-1); 
 					    $(".jcarousel-control-prev").click();
-					    changeZoom(index-1);
+					    index -= 1;
 				    }
 			    });
-			    $(".next-right").click(function(e) {    
-			    	if(index+1>0 && index+1<=max_index){     
-					    $(".jcarousel-control-next").click();
+			    $(".next-right").click(function(e) { 
+			    	if(index+1<=max_index){     
 					    changeZoom(index+1);
+					    $(".jcarousel-control-next").click();
+					    index +=  1;
 					}
-			    });			    
+			    });			
+			    
+			    $(document).keydown(function(e) {
+				    switch(e.which) {
+				        case 37: // left
+				        	$(".next-left").click();
+				        break;				
+				
+				        case 39: // right
+				        	$(".next-right").click();
+				        break;
+				
+				        default: return; // exit this handler for other keys
+				    }
+				    e.preventDefault(); // prevent the default action (scroll / move caret)
+				});    
 			   
 			   
 			   changeZoom(index);
