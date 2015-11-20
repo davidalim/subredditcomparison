@@ -1,0 +1,131 @@
+.arrow-bar {
+	width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.next-left, .next-right, .next-space{	
+	width: 50px;
+	height: 50px;
+	display: inline-block;
+}
+
+.next-left {
+	background-color: red;
+}
+
+.next-space {
+	width: 10px;
+}
+
+.next-right {	
+	background-color: blue;
+}
+
+.panel-wrapper {
+	width: 100%;
+	height: 100%;
+}
+
+.panel-left {
+	width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.panel-right {
+	width: 50%;
+    height: 100%;
+    float: left;
+    padding-left: 20px;
+}
+
+.jcarousel-wrapper {
+    margin: 15px auto;
+    position: relative;
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
+    -webkit-box-shadow: 0 0 2px #999;
+       -moz-box-shadow: 0 0 2px #999;
+            box-shadow: 0 0 2px #999;
+}
+
+.jcarousel-wrapper .photo-credits {
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    font-size: 13px;
+    color: #fff;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.85);
+    opacity: .66;
+}
+
+.jcarousel-wrapper .photo-credits a {
+    color: #fff;
+}
+
+/** Carousel **/
+
+.jcarousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.jcarousel ul {
+    width: 20000em;
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.jcarousel li {
+    float: left;
+}
+
+.jcarousel .item-container {
+	width: 600px;
+	height: 425px;
+}
+
+.jcarousel .item-container img {
+	max-width:100%;
+	max-height:100%;
+	display:block;
+   	margin:auto;
+}
+
+/** Carousel Pagination **/
+
+.jcarousel-pagination {
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+}
+
+.jcarousel-pagination a {
+    text-decoration: none;
+    display: inline-block;
+    
+    font-size: 11px;
+    line-height: 14px;
+    min-width: 14px;
+    
+    background: #fff;
+    color: #4E443C;
+    border-radius: 14px;
+    padding: 3px;
+    text-align: center;
+    
+    margin-right: 2px;
+    
+    opacity: .75;
+}
+
+.jcarousel-pagination a.active {
+    background: #4E443C;
+    color: #fff;
+    opacity: 1;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.75);
+}

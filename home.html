@@ -10,6 +10,9 @@
     <meta name="author" content="">
 
     <title>Similarity between Subreddit Communities</title>
+    
+    
+    <link rel="stylesheet" type="text/css" href="css/jcarousel.basic.css">
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -17,12 +20,29 @@
     <!-- Custom CSS -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
 
+	<link href="css/sections.css" rel="stylesheet">
+	
+	
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>    
+    <!-- D3 Visualization -->
+    <script src="js/d3.min.js"></script>    
+    <!-- Networkx -->
+    <script src="js/jsnetworkx.js"></script>    
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="js/jcarousel.min.js"></script>
+
+    <script type="text/javascript" src="js/jcarousel.basic.js"></script>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
 
 </head>
 
@@ -47,20 +67,20 @@
                     <a href="#" id="section0">Introduction</a>
                 </li>
                 <li>
-                    <a href="#" id="section1">Section One</a>
+                    <a href="#" id="section1">A Look at the Users</a>
                 </li>
                 <li>
-                    <a href="#" id="section2">Section Two</a>
+                    <a href="#" id="section2">Comparing the Subreddits</a>
                 </li>
                 <li>
-                    <a href="#" id="section3">Section Three</a>
+                    <a href="#" id="section3">Natural Language Processing</a>
                 </li>
             </ul>              
             <a href="#" id="menu-bars-fade"> 
             	<img src="menu-icon.png" class="menu-bars-right bottom"/>
             	<img src="menu-icon-accent.png" class="menu-bars-right top"/>
             </a>            
-            <div class="sidebar-nav-accent" ></div>
+            <div class="sidebar-nav-accent"></div>
         </div>
         <!-- /#sidebar-wrapper -->
 
@@ -72,36 +92,37 @@
     </div>
     <!-- /#wrapper -->
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+
+
 
     <!-- Menu Toggle Script -->
     <script>    
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
+    
+    function toggle() {    	
         $("#wrapper").toggleClass("toggled");
         $(".sidebar-nav").toggleClass("toggled");
         $(".show-hide-bar").toggleClass("toggled");
         $("#menu-bars-fade img.top").toggleClass("toggled");
+    }
+    
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        toggle();
     });
     
     $(".menu-bars-right").click(function(e) {
         e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-        $(".sidebar-nav").toggleClass("toggled");
-        $(".show-hide-bar").toggleClass("toggled");
-        $("#menu-bars-fade img.top").toggleClass("toggled");
+        toggle();
     });
     
     $("#menu-title").click(function(e) {
         e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-        $(".sidebar-nav").toggleClass("toggled");
-        $(".show-hide-bar").toggleClass("toggled");
-        $("#menu-bars-fade img.top").toggleClass("toggled");
+        toggle();
+    });
+    
+    $("#section0").click(function(e) {        
+	    $("#page-content-wrapper").load("section0.html");
     });
     
     $("#section1").click(function(e) {        
@@ -118,13 +139,13 @@
     
     
     //---- Initial States ----    
-    $("#page-content-wrapper").load("sectionhome.html");
+    $("#page-content-wrapper").load("section3.html");
     
     
     setTimeout(
 	  function() 
 	  {
-	    $("#menu-toggle").click();
+	    //$("#menu-toggle").click();
 	  }, 700);
     </script>
 
