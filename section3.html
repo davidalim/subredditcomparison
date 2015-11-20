@@ -1,6 +1,7 @@
 <head>
 	    <script type="text/javascript" src="js/jcarousel.min.js"></script>	
 	    <script type="text/javascript" src="js/jcarousel.basic.js"></script>
+	    <script src="js/jquery.elevatezoom.js"></script>
 </head>
 <div class="container-fluid">
     <div class="row">
@@ -17,8 +18,8 @@
 		            	
 		                <div class="jcarousel">
 		                    <ul>
-		                        <li><img src="_shared/img/img1.jpg" alt=""></li>
-		                        <li><img src="_shared/img/img2.jpg" alt=""></li>
+		                        <li style="background-color: red;"></li>
+		                        <li style="background-color: blue;"></li>
 		                        <li><img src="_shared/img/img3.jpg" alt=""></li>
 		                        <li><img src="_shared/img/img4.jpg" alt=""></li>
 		                        <li><img src="_shared/img/img5.jpg" alt=""></li>
@@ -26,7 +27,7 @@
 		                    </ul>
 		                </div>
 						
-		                <div class="jcarousel-control-prev"></div>
+		                <div class="jcarousel-control-prev"></div>	
 		                <div class="jcarousel-control-next"></div>
 		                
 		            </div>
@@ -37,10 +38,10 @@
 		            	
 		                <div class="jcarousel">
 		                    <ul>
-		                        <li><div class="item-container"><img src="_shared/img/Christianity_wordclouds.png" alt=""></div></li>
-		                        <li><div class="item-container"><img src="_shared/img/Islam_wordclouds.png" alt=""></div></li>
-		                        <li><div class="item-container"><img src="_shared/img/incommon_wordcloud.png" alt=""></div></li>
-		                        <li><img src="_shared/img/img4.jpg" alt=""></li>
+		                        <li><img src="_shared/img/Christianity_wordclouds_fit.png" alt=""></li>
+		                        <li><img src="_shared/img/Islam_wordclouds.png" alt=""></li>
+		                        <li><img src="_shared/img/incommon_wordcloud.png" alt=""></li>
+		                        <li><img id="zoom_01" src='images/small/InCommon_wordcloud.png' data-zoom-image="images/large/InCommon_wordcloud.png"/></li>
 		                        <li><img src="_shared/img/img5.jpg" alt=""></li>
 		                        <li><img src="_shared/img/img6.jpg" alt=""></li>
 		                    </ul>
@@ -63,6 +64,13 @@
 			    $(".next-right").click(function(e) {        
 				    $(".jcarousel-control-next").click();
 			    });
+			    
+			    $('#zoom_01').elevateZoom({
+				    zoomType: "inner",
+					cursor: "crosshair",
+					zoomWindowFadeIn: 500,
+					zoomWindowFadeOut: 750
+			   }); 
             </script>
     </div>
 </div>
