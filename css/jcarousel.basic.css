@@ -89,13 +89,9 @@ a:hover .nav-arrow-up-accent, a:hover .nav-arrow-down-accent{
     right: 15px;
     bottom: 0;
     font-size: 13px;
-    color: #fff;
+    color: #555555;
     text-shadow: 0 0 1px rgba(0, 0, 0, 0.85);
-    opacity: .66;
-}
-
-.jcarousel-wrapper .photo-credits a {
-    color: #fff;
+    opacity: .9;
 }
 
 /** Carousel **/
