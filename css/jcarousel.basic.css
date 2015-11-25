@@ -109,6 +109,29 @@ a:hover .nav-arrow-up-accent, a:hover .nav-arrow-down-accent{
     padding: 0;
 }
 
+.list-content {
+	overflow:auto;
+	width: 100px;
+	padding: 15px;
+	color: black;
+	overflow: wrap:
+}
+
+.list-content h2{
+	font-size: 50px;
+	font-weight: 600;
+	padding-bottom: 20px;
+}
+
+.list-content h4{
+	font-size: 20px;
+}
+
+.list-content h5{
+	padding-left: 15px;
+}
+
+
 .jcarousel li {
     float: left;    
 	width: 600px;
