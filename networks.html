@@ -8,21 +8,22 @@
 	    <script src="js/jsnetworkx.js"></script>  
 	    
 	    <script src="islamtext.js"></script> 
-	    <script src="christianity.json"></script>   
+	    <script src="christianitytext.js"></script>   
 	</head>
 	<body>
         <div id="network-canvas" style="width:600px; height: 425px; background-color: #CCCCCC"></div>
         
         <script>
         
-        	var obj = JSON.parse(text);
-			alert(obj.KaraokeKitten[1]);
+        	var obj = JSON.parse(islam_text);
+			//alert(obj.KaraokeKitten[1]);
         
         	var G = new jsnx.Graph();
-			G.addNode(1, {count: 12});
-			G.addNode(2, {count: 8});
-			G.addNode(3, {count: 15});
+			G.addNode(1, {count: 12, color: 'green'});
+			G.addNode(2, {count: 8, color: 'blue'});
+			G.addNode(3, {count: 15, color: 'red'});
 			G.addEdgesFrom([[1,2],[2,3]]);
+			
 			 
 			jsnx.draw(G, {
 			  element: '#network-canvas',
@@ -32,6 +33,11 @@
 			      // `d` has the properties `node`, `data` and `G`
 			      return d.data.count;
 			    }
+			  },
+			  nodeStyle: {
+			      fill: function(d) {
+			          return d.data.color;
+			      }
 			  }
 			});
         </script>

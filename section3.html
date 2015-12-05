@@ -25,52 +25,63 @@
     		</div>
     		
     		<div class="arrow-bar">
-	            <a href="#"><div class="next-left">Back</div></a>
-	            <a href="#"><div class="next-right">Next</div></a>
+	            <a href="#"><div class="jcarousel-control-prev next-left">Back</div></a>
+	            <a href="#"><div class="jcarousel-control-next next-right">Next</div></a>
             </div>
         	<div class="panel-wrapper">
 	            
 	            <div class="panel-left">
+	            	<div style="width: 600px;">
 		            <div class="jcarousel-wrapper">
 		            	
 		                <div class="jcarousel">
 		                    <ul>
-		                        <li class="list-content" style="background-color: #bbbbbb;">
-		                        	<h2>Christianity</h2>
-		                        	<h4>In this section we present wordclouds which display significant words in the context of these subreddits.
-		                        		We did this by 
-		                        		</h4>
-		                        	<br/>
-		                        	<h4>We first focus on the words that are most significant in the Christianity subreddit.
-		                        		</h4>
+		                        <li style="background-color: #bbbbbb;">
+		                        	<div class="list-content">
+			                        	<h2>Christianity</h2>
+			                        	<h4>In this section we present wordclouds which display significant words in the context of these subreddits.
+			                        		We did this by 
+			                        		</h4>
+			                        	<br/>
+			                        	<h4>We first focus on the words that are most significant in the Christianity subreddit.
+			                        		</h4>
+		                        	</div>
 		                        </li>
-		                        <li class="list-content" style="background-color: #dddddd;">
+		                        <li style="background-color: #dddddd;">
+		                        	<div class="list-content">
 		                        	<h2>Islam</h2>
 		                        	<h4>SubTitle</h4>
 		                        	<h5>afadsfsdaf</h5>
 		                        	<h5>afadsfsdaf</h5>
 		                        	<h5>afadsfsdaf</h5>
+		                        	</div>
 		                        </li>
-		                        <li class="list-content" style="background-color: #bbbbbb;">
+		                        <li style="background-color: #bbbbbb;">
+		                        	<div class="list-content">
 		                        	<h2>Combined</h2>
 		                        	<h4>SubTitle</h4>
 		                        	<h5>afadsfsdaf</h5>
 		                        	<h5>afadsfsdaf</h5>
 		                        	<h5>afadsfsdaf</h5>
+		                        	</div>
 		                        </li>		                        
-		                        <li class="list-content" style="background-color: #dddddd;">
+		                        <li style="background-color: #dddddd;">
+		                        	<div class="list-content">
 		                        	<h2>In Common</h2>
 		                        	<h4>SubTitle</h4>
 		                        	<h5>afadsfsdaf</h5>
 		                        	<h5>afadsfsdaf</h5>
 		                        	<h5>afadsfsdaf</h5>
+		                        	</div>
 		                        </li>
-		                        <li class="list-content" style="background-color: #bbbbbb;">
+		                        <li style="background-color: #bbbbbb;">
+		                        	<div class="list-content">
 		                        	<h2>Closest Significance</h2>
 		                        	<h4>SubTitle</h4>
 		                        	<h5>afadsfsdaf</h5>
 		                        	<h5>afadsfsdaf</h5>
 		                        	<h5>afadsfsdaf</h5>
+		                        	</div>
 		                        </li>
 		                    </ul>
 		                </div>
@@ -78,10 +89,15 @@
 		                <div class="jcarousel-control-prev"></div>	
 		                <div class="jcarousel-control-next"></div>
 		                
+		                <p class="jcarousel-pagination">
+		                
+		            </div>
+		            
 		            </div>
 		         </div>
 	            
 	            <div class="panel-right">
+	            	<div style="width: 600px;">
 		             <div class="jcarousel-wrapper">
 		            	
 		                <div class="jcarousel">
@@ -98,11 +114,11 @@
 		                </p>
 		                <div class="jcarousel-control-prev"></div>
 		                <div class="jcarousel-control-next"></div>
-		                    
+		                
 		            </div>
 	           </div>
             
-            
+            </div>
 			</div>
         
         
@@ -125,17 +141,17 @@
 				    }); 				    
             	}
             	
-			    $(".next-left").click(function(e) {  			    	
+			    $(".jcarousel-control-prev").click(function(e) {  			    	
             		if(index-1>0){     
 					    changeZoom(index-1); 
-					    $(".jcarousel-control-prev").click();
+					    //$(".jcarousel-control-prev").click();
 					    index -= 1;
 				    }
 			    });
-			    $(".next-right").click(function(e) { 
+			    $(".jcarousel-control-next").click(function(e) { 
 			    	if(index+1<=max_index){     
 					    changeZoom(index+1);
-					    $(".jcarousel-control-next").click();
+					    //$(".jcarousel-control-next").click();
 					    index +=  1;
 					}
 			    });			
@@ -143,11 +159,11 @@
 			    $(document).keydown(function(e) {
 				    switch(e.which) {
 				        case 37: // left
-				        	$(".next-left").click();
+				        	$(".jcarousel-control-prev").click();
 				        break;				
 				
 				        case 39: // right
-				        	$(".next-right").click();
+				        	$(".jcarousel-control-next").click();
 				        break;
 				
 				        default: return; // exit this handler for other keys
