@@ -1,5 +1,5 @@
 <head>
-	    <script type="text/javascript" src="js/jcarousel.min.js"></script>	
+	    <script type="text/javascript" src="js/jquery.jcarousel.js"></script>	
 	    <script type="text/javascript" src="js/jcarousel.basic.js"></script>
 	    <script src="js/jquery.elevatezoom.js"></script>
 </head>
@@ -102,15 +102,15 @@
 		            	
 		                <div class="jcarousel">
 		                    <ul>
-		                        <li><img id="cloud1" src='images/small/Christianity_wordcloud.png' data-zoom-image="images/large/Christianity_wordcloud.png"/></li>
-		                        <li><img id="cloud2" src='images/small/Islam_wordcloud.png' data-zoom-image="images/large/Islam_wordcloud.png"/></li>
-		                        <li><img id="cloud3" src='images/small/Combined_wordcloud.png' data-zoom-image="images/large/Combined_wordcloud.png"/></li>
-		                        <li><img id="cloud4" src='images/small/InCommon_wordcloud.png' data-zoom-image="images/large/InCommon_wordcloud.png"/></li>
-		                        <li><img id="cloud5" src='images/small/Difference of Scores_wordcloud.png' data-zoom-image="images/large/Difference of Scores_wordcloud.png"/></li>
+		                        <li><img id="cloud1" class="zoomable" src='images/small/Christianity_wordcloud.png' data-zoom-image="images/large/Christianity_wordcloud.png"/></li>
+		                        <li><img id="cloud2" class="zoomable" src='images/small/Islam_wordcloud.png' data-zoom-image="images/large/Islam_wordcloud.png"/></li>
+		                        <li><img id="cloud3" class="zoomable" src='images/small/Combined_wordcloud.png' data-zoom-image="images/large/Combined_wordcloud.png"/></li>
+		                        <li><img id="cloud4" class="zoomable" src='images/small/InCommon_wordcloud.png' data-zoom-image="images/large/InCommon_wordcloud.png"/></li>
+		                        <li><img id="cloud5" class="zoomable" src='images/small/Difference of Scores_wordcloud.png' data-zoom-image="images/large/Difference of Scores_wordcloud.png"/></li>
 		                    </ul>
 		                </div>
 						<p class="photo-credits">
-		                    Hover to Zoom
+		                    Click to Zoom
 		                </p>
 		                <div class="jcarousel-control-prev"></div>
 		                <div class="jcarousel-control-next"></div>
@@ -124,36 +124,43 @@
         
             <script>
 	        	var max_index = 5;
-	        	var index = 1;
+	        	var zoomActive = false;
 	        	
-	        	function changeZoom(i) {
-	        		$.removeData("#cloud" + index, 'elevateZoom');//remove zoom instance from image
-	    			$('.zoomContainer').remove();
-				    $("#cloud" + index).removeClass("zoom");
-				    					    	    
-				    
-				    $("#cloud" + i).addClass("zoom");				    
+	        	function changeZoom(id) {
+				    $("#" + id).addClass("zoom");				    
 				    $('.zoom').elevateZoom({
 					     zoomType: "inner",
 					 	 cursor: "crosshair",
 					 	 zoomWindowFadeIn: 500,
 					  	 zoomWindowFadeOut: 750
-				    }); 				    
+				    }); 			
+				    zoomActive = true;	    
             	}
             	
-			    $(".jcarousel-control-prev").click(function(e) {  			    	
-            		if(index-1>0){     
-					    changeZoom(index-1); 
-					    //$(".jcarousel-control-prev").click();
-					    index -= 1;
-				    }
+            	function removeZoom(){            		
+            		for (i = 1; i <= max_index; i++) { 
+		        		$.removeData("#cloud" + i, 'elevateZoom');//remove zoom instance from image
+					    $("#cloud" + i).removeClass("zoom");
+					}
+	    			$('.zoomContainer').remove();
+	    			zoomActive = false;	
+            	}
+            	
+            	$(".zoomable").click(function(){
+				     var id = this.id;
+				   	if(zoomActive == false)	{            			
+            			changeZoom(id);
+            		} else {
+            			removeZoom();
+            		}   
+				});            	
+            	
+            	var inTransition = false;
+			    $(".jcarousel-control-prev").click(function(e) {  
+			    	removeZoom();			
 			    });
 			    $(".jcarousel-control-next").click(function(e) { 
-			    	if(index+1<=max_index){     
-					    changeZoom(index+1);
-					    //$(".jcarousel-control-next").click();
-					    index +=  1;
-					}
+			    	removeZoom();
 			    });			
 			    
 			    $(document).keydown(function(e) {
@@ -169,10 +176,8 @@
 				        default: return; // exit this handler for other keys
 				    }
 				    e.preventDefault(); // prevent the default action (scroll / move caret)
-				});    
+				});    			   
 			   
-			   
-			   changeZoom(index);
             </script>
     </div>
 </div>
