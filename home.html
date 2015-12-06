@@ -9,12 +9,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Similarity between Subreddit Communities</title>
+    <title>Similarity Between Subreddit Communities</title>
     
 	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-	<link rel="icon" href="./favicon.ico" type="image/x-icon">
-    <link href='https://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="css/jcarousel.basic.css">
+	<link rel="icon" href="./favicon.ico" type="image/x-icon">    
+    
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Corben:bold' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Nobile' rel='stylesheet' type='text/css'>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -22,7 +24,8 @@
     <!-- Custom CSS -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
 
-	<link href="css/sections.css" rel="stylesheet">
+	
+    <link rel="stylesheet" type="text/css" href="css/jcarousel.basic.css">
 	<link href="css/scrollbar.css" rel="stylesheet">
 	
     <!-- jQuery -->
@@ -144,7 +147,7 @@
 	  	openMenu();
 	});	
 	$( "#sidebar-wrapper" ).mouseleave(function() {
-	  	closeMenu()
+	  	closeMenu();
 	});
     
     var current_section = 0;
@@ -181,7 +184,7 @@
     
     //---- Initial States ----   
     
-    current_section = 0;  
+    current_section = 3;  
     $('#page-content-wrapper').load("section"+current_section+".html");
     $("#menu-toggle").click();
     

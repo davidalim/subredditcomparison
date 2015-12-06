@@ -120,18 +120,23 @@ a:hover .nav-arrow-up-accent, a:hover .nav-arrow-down-accent{
 	color: black;
 }
 
-.list-content h2{
-	font-size: 50px;
-	font-weight: 600;
-	padding-bottom: 20px;
+	
+h1 {
+ font-family: 'Corben', Georgia, Times, serif;
+ font-size: 40px;
+ line-height: 40px;
 }
 
-.list-content h4{
-	font-size: 20px;
-}
+h2 {
+ font-family: 'Nobile', Helvetica, Arial, sans-serif;
+ font-size: 33px;
+ line-height: 30px;
+} 
 
-.list-content h5{
-	padding-left: 15px;
+p {
+ font-family: 'Nobile', Helvetica, Arial, sans-serif;
+ font-size: 13px;
+ line-height: 25px;
 }
 
 

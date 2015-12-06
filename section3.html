@@ -6,7 +6,7 @@
 <div class="container-fluid">
     <div class="row">
     		<div class="nav-title">
-    			<h1 class="section-title">Section 3</h1>
+    			<h1 class="section-title">Natural Language Processing</h1>
     		</div>
     		
     		<div class="arrow-bar">
@@ -16,56 +16,121 @@
         	<div class="panel-wrapper">
 	            
 	            <div class="panel-left">
-	            	<div >
 		            <div class="jcarousel-wrapper">
 		            	
 		                <div class="jcarousel">
 		                    <ul>
-		                        <li style="background-color: #bbbbbb;">
+		                        <li style="background-color: #dddddd;">
 		                        	<div class="list-content">
+		                        		<h2>Theory</h2>	                        			
+	                        			<p>
+	                        				Another way to compare these two communities is by looking at the actual
+	                        				text of the posts in the subreddits. From the text, we can use natural 
+	                        				language proscessing to find words that are significant to each group.
+	                        			<p>
+	                        				One way to measure the significance is by calculating the 
+	                        				<a href="https://en.wikipedia.org/wiki/Tf%E2%80%93idf" target="blank">TF-IDF</a>
+	                        				of each word. The TF-IDF gives a significance to words that appear many times
+	                        				in a context, but also takes away significance from words that appear in many
+	                        				contexts. This makes sense as words that are not unique to one text are often
+	                        				less significant. 
+	                        			<p> 	                        			
+	                        				At this point you may realize that this scheme poses a <b>slight problem</b> to
+	                        				our goal. Again, our goal is to find the significant words that the two
+	                        				subreddits have in common; however, we just discussed that TF-IDF determines
+	                        				words to be less significant if they <i>are</i> in common. 
+	                        			<p>
+	                        				Because of this, we use a slight work-around. Instead of grouping the 
+	                        				Christianity and Islam subreddits together and calculating the TF-IDFs of the
+	                        				words, we calculate the TF-IDFs of each subreddit while they are grouped with 
+	                        				other randoms subreddits, and compare the significant words at that point.
+	                        			<h2>Implementation</h2>	                        			
+	                        			<p>
+	                        				We start off by retreiving text from the Christianity and Islam subreddit groups.
+	                        				We do this by simply stringing together the top 1000 posts (title and content)
+	                        				along with their comments and storing them in text files. We tokenize and 
+	                        				clean the text, removing
+	                        				<a href="https://en.wikipedia.org/wiki/Stop_words" target="blank">stopwords</a>
+	                        				and numbers. Since we are pooling the communities seperately with other
+	                        				subreddits, we do this same process for Sports, Gaming, Music and Movies also.
+	                        			<p>
+	                        				Next we group Islam with Sports, Gaming, Music and Movies and
+	                        				calculate the TF-IDF scores for every word. The same is done with Christianity. 
+	                        				At this point we have a score for every word in the Islam and Chrstianity 
+	                        				subreddt texts indicationg how significant that is in the group. Now we 
+	                        				will proceed to analyze these results using wordclouds.     
+		                        	</div>
+		                        </li>
+		                         <li style="background-color: #bbbbbb;">
+									<div class="list-content">
 			                        	<h2>Christianity</h2>
-			                        	<h4>In this section we present wordclouds which display significant words in the context of these subreddits.
-			                        		We did this by 
-			                        		</h4>
-			                        	<br/>
-			                        	<h4>We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.
-			                        		</h4>
+			                        	<p>
+			                        		This first wordcloud displays the words that are most significant in 
+			                        		the Christianity subreddit. Feel free to click on the image and explore
+			                        		some of the words. In general, the larger the word means the more significant.
+			                        	<p>
+			                        		Most of these words are related to Christianity. There are a few interesting
+			                        		ones, such as <b>atheism</b>, <b>wikipedia</b>, and <b>youtube</b>. Others to point out are
+			                        		<b>people</b>, <b>life</b>, <b>science</b>, and <b>self</b>.
+			                        	
 		                        	</div>
 		                        </li>
 		                        <li style="background-color: #dddddd;">
+									<div class="list-content">
+			                        	<h2>Islam</h2>
+			                        	<p>
+			                        		This next wordcloud displays the words that are most significant in 
+			                        		the Islam subreddit. Again you can click on the image to zoom in on
+			                        		some of the words.
+			                        	<p>
+			                        		Most of these words again are very related to Islam. Some to notice are
+			                        		<b>worldnews</b>, <b>war</b>, <b>media</b>, and <b>facebook</b>.
+			                        	
+		                        	</div>
+		                        </li>
+		                        <li style="background-color: #bbbbbb;">
 		                        	<div class="list-content">
-		                        	<h2>Islam</h2>
-		                        	<h4>SubTitle</h4>
-		                        	<h5>afadsfsdaf</h5>
-		                        	<h5>afadsfsdaf</h5>
-		                        	<h5>afadsfsdaf</h5>
+		                        	<h2>In Common</h2>
+			                        	<p>
+			                        		Now we start to compare the two communities. To create this wordcloud, we 
+			                        		made lists of the top 1000 most significant words from both subreddits, and took
+			                        		words that appeared in both lists. 
+			                        	<p>
+			                        		There are some words that are cool to see these two communities have in common.
+			                        		For instance, <b>compassion</b>, <b>forgiveness</b>, <b>repentence</b>, <b>feminism</b>, 
+			                        		<b>message</b> and <b>worshiping</b>.
+		                        	</div>
+		                        </li>		                        
+		                        <li style="background-color: #dddddd;">
+		                        	<div class="list-content">
+		                        	<h2>Closest Significance</h2>
+									<p>
+										This is an interesting wordcloud where the words are ones that the two subreddits
+										had similar in significance. In other words, we took all of the words that the
+										subreddits had in common and calculated the absolute difference between their 
+										TF-IDF scores. In general, the larger the word means the smaller the difference 
+										and the closer in similarity of significant.
+									<p>
+										We can see that the words <b>christianity</b>, <b>islam</b>, and <b>atheism</b> stand out here. 
+										This is interesting beacuse it appears that both groups talk about these three
+										religions the same amount.
+										
 		                        	</div>
 		                        </li>
 		                        <li style="background-color: #bbbbbb;">
 		                        	<div class="list-content">
 		                        	<h2>Combined</h2>
-		                        	<h4>SubTitle</h4>
-		                        	<h5>afadsfsdaf</h5>
-		                        	<h5>afadsfsdaf</h5>
-		                        	<h5>afadsfsdaf</h5>
+									<p>
+										For the final wordcloud we don't  use the TF-IDF scores that we have been using.
+									  	Instead, the TF-IDF scores for these words were calculated by first combining the
+									  	Islam and Christianity texts, and grouping it with the other subreddits. Therefore
+									  	these words are ones that stand out the most out of the two communities altogether.
+									 <p>
+									 	Naturally we see that the words "islam" and "christianity" surface along with other
+									 	unsurprizing words such as <b>muslim</b>, <b>mosque</b>, <b>pastor</b>, 
+									 	<b>reddit</b>, <b>comment</b>, and <b>scripture</b>.
+										
 		                        	</div>
-		                        </li>		                        
-		                        <li style="background-color: #dddddd;">
-		                        	<div class="list-content">
-		                        	<h2>In Common</h2>
-		                        	<h4>SubTitle</h4>
-		                        	<h5>afadsfsdaf</h5>
-		                        	<h5>afadsfsdaf</h5>
-		                        	<h5>afadsfsdaf</h5>
-		                        	</div>
-		                        </li>
-		                        <li style="background-color: #bbbbbb;">
-		                        	<div class="list-content">
-		                        	<h2>Closest Significance</h2>
-		                        	<h4>SubTitle</h4>
-		                        	<h5>afadsfsdaf</h5>
-		                        	<h5>afadsfsdaf</h5>
-		                        	<h5>afadsfsdaf</h5>
 		                        	</div>
 		                        </li>
 		                    </ul>
@@ -78,20 +143,19 @@
 		                
 		            </div>
 		            
-		            </div>
 		         </div>
 	            
 	            <div class="panel-right">
-	            	<div >
 		             <div class="jcarousel-wrapper">
 		            	
 		                <div class="jcarousel">
 		                    <ul>
-		                        <li><img id="cloud1" class="zoomable" src='images/small/Christianity_wordcloud.png' data-zoom-image="images/large/Christianity_wordcloud.png"/></li>
-		                        <li><img id="cloud2" class="zoomable" src='images/small/Islam_wordcloud.png' data-zoom-image="images/large/Islam_wordcloud.png"/></li>
-		                        <li><img id="cloud3" class="zoomable" src='images/small/Combined_wordcloud.png' data-zoom-image="images/large/Combined_wordcloud.png"/></li>
+		                        <li><img id="cloud1" class="zoomable" src='images/small/cloud_wordcloud.png' data-zoom-image="images/large/cloud_wordcloud.png"/></li>
+		                        <li><img id="cloud2" class="zoomable" src='images/small/Christianity_wordcloud.png' data-zoom-image="images/large/Christianity_wordcloud.png"/></li>
+		                        <li><img id="cloud3" class="zoomable" src='images/small/Islam_wordcloud.png' data-zoom-image="images/large/Islam_wordcloud.png"/></li>
 		                        <li><img id="cloud4" class="zoomable" src='images/small/InCommon_wordcloud.png' data-zoom-image="images/large/InCommon_wordcloud.png"/></li>
 		                        <li><img id="cloud5" class="zoomable" src='images/small/Difference of Scores_wordcloud.png' data-zoom-image="images/large/Difference of Scores_wordcloud.png"/></li>
+		                        <li><img id="cloud6" class="zoomable" src='images/small/Combined_wordcloud.png' data-zoom-image="images/large/Combined_wordcloud.png"/></li>
 		                    </ul>
 		                </div>
 						<p class="photo-credits">
@@ -103,12 +167,11 @@
 		            </div>
 	           </div>
             
-            </div>
 			</div>
         
         
             <script>
-	        	var max_index = 5;
+	        	var max_index = 6;
 	        	var zoomActive = false;
 	        	
 	        	function changeZoom(id) {
