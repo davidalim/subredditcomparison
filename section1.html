@@ -1,31 +1,193 @@
+<head>
+	    <script type="text/javascript" src="js/jquery.jcarousel.js"></script>	
+	    <script type="text/javascript" src="js/jcarousel.basic.js"></script>
+	    <script src="js/jquery.elevatezoom.js"></script>
+</head>
 <div class="container-fluid">
     <div class="row">
-        <div class="nav-title">
-			
-			<h1 class="section-title">Section 1</h1>
-		</div>
+    		<div class="nav-title">
+    			<h1 class="section-title">Section 1</h1>
+    		</div>
+    		
+    		<div class="arrow-bar">
+	            <a href="#"><div class="jcarousel-control-prev next-left">Back</div></a>
+	            <a href="#"><div class="jcarousel-control-next next-right">Next</div></a>
+            </div>
+        	<div class="panel-wrapper">
+	            
+	            <div class="panel-left">
+	            	<div >
+		            <div class="jcarousel-wrapper">
+		            	
+		                <div class="jcarousel">
+		                    <ul>
+		                        <li style="background-color: #bbbbbb;">
+		                        	<div class="list-content">
+			                        	<h2>Christianity</h2>
+			                        	<h4>In this section we present wordclouds which display significant words in the context of these subreddits.
+			                        		We did this by 
+			                        		</h4>
+			                        	<br/>
+			                        	<h4>We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.
+			                        		</h4>
+		                        	</div>
+		                        </li>
+		                        <li style="background-color: #dddddd;">
+		                        	<div class="list-content">
+		                        	<h2>Islam</h2>
+		                        	<h4>SubTitle</h4>
+		                        	<h5>afadsfsdaf</h5>
+		                        	<h5>afadsfsdaf</h5>
+		                        	<h5>afadsfsdaf</h5>
+		                        	</div>
+		                        </li>
+		                        <li style="background-color: #bbbbbb;">
+		                        	<div class="list-content">
+		                        	<h2>Combined</h2>
+		                        	<h4>SubTitle</h4>
+		                        	<h5>afadsfsdaf</h5>
+		                        	<h5>afadsfsdaf</h5>
+		                        	<h5>afadsfsdaf</h5>
+		                        	</div>
+		                        </li>		                        
+		                        <li style="background-color: #dddddd;">
+		                        	<div class="list-content">
+		                        	<h2>In Common</h2>
+		                        	<h4>SubTitle</h4>
+		                        	<h5>afadsfsdaf</h5>
+		                        	<h5>afadsfsdaf</h5>
+		                        	<h5>afadsfsdaf</h5>
+		                        	</div>
+		                        </li>
+		                        <li style="background-color: #bbbbbb;">
+		                        	<div class="list-content">
+		                        	<h2>Closest Significance</h2>
+		                        	<h4>SubTitle</h4>
+		                        	<h5>afadsfsdaf</h5>
+		                        	<h5>afadsfsdaf</h5>
+		                        	<h5>afadsfsdaf</h5>
+		                        	</div>
+		                        </li>
+		                    </ul>
+		                </div>
+						
+		                <div class="jcarousel-control-prev"></div>	
+		                <div class="jcarousel-control-next"></div>
+		                
+		                <!--<p class="jcarousel-pagination">-->
+		                
+		            </div>
+		            
+		            </div>
+		         </div>
+	            
+	            <div class="panel-right">
+	            	<div >
+		             <div class="jcarousel-wrapper">
+		            	
+		                <div class="jcarousel">
+		                    <ul>
+		                        <li><div id="demo-canvas" style="width:600px; height: 425px;"></div></li>
+		                        <li><div id="demo-canvas1" style="width:600px; height: 425px;"></div></li>
+		                    </ul>
+		                </div>
+						<p class="photo-credits">
+		                    Click to Zoom
+		                </p>
+		                <div class="jcarousel-control-prev"></div>
+		                <div class="jcarousel-control-next"></div>
+		                
+		            </div>
+	           </div>
+            
+            </div>
+			</div>
         
-        <div id="demo-canvas" style="width:500px; height: 500px;"></div>
         
-        <script>
-        	var G = new jsnx.Graph();
-			G.addNode(1, {count: 12});
-			G.addNode(2, {count: 8});
-			G.addNode(3, {count: 15});
-			G.addEdgesFrom([[1,2],[2,3]]);
-			 
-			jsnx.draw(G, {
-			  element: '#demo-canvas',
-			  withLabels: true,
-			  nodeAttr: {
-			    r: function(d) {
-			      // `d` has the properties `node`, `data` and `G`
-			      return d.data.count;
-			    }
-			  }
-			});
-        </script>
+            <script>
+				var G = new jsnx.Graph();
+				G.addNode(1, {count: 12});
+				G.addNode(2, {count: 8});
+				G.addNode(3, {count: 15});
+				G.addEdgesFrom([[1,2],[2,3]]);
+				 
+				jsnx.draw(G, {
+				  element: '#demo-canvas',
+				  withLabels: true,
+				  nodeAttr: {
+				    r: function(d) {
+				      // `d` has the properties `node`, `data` and `G`
+				      return d.data.count;
+				    }
+				  }
+				});
+				jsnx.draw(G, {
+				  element: '#demo-canvas1',
+				  withLabels: true,
+				  nodeAttr: {
+				    r: function(d) {
+				      // `d` has the properties `node`, `data` and `G`
+				      return d.data.count;
+				    }
+				  }
+				});
+            
+	        	var max_index = 5;
+	        	var zoomActive = false;
+	        	
+	        	function changeZoom(id) {
+				    $("#" + id).addClass("zoom");				    
+				    $('.zoom').elevateZoom({
+					     zoomType: "inner",
+					 	 cursor: "crosshair",
+					 	 zoomWindowFadeIn: 500,
+					  	 zoomWindowFadeOut: 750
+				    }); 			
+				    zoomActive = true;	    
+            	}
+            	
+            	function removeZoom(){            		
+            		for (i = 1; i <= max_index; i++) { 
+		        		$.removeData("#cloud" + i, 'elevateZoom');//remove zoom instance from image
+					    $("#cloud" + i).removeClass("zoom");
+					}
+	    			$('.zoomContainer').remove();
+	    			zoomActive = false;	
+            	}
+            	
+            	$(".zoomable").click(function(){
+				     var id = this.id;
+				   	if(zoomActive == false)	{            			
+            			changeZoom(id);
+            		} else {
+            			removeZoom();
+            		}   
+				});            	
+            	
+            	var inTransition = false;
+			    $(".jcarousel-control-prev").click(function(e) {  
+			    	removeZoom();			
+			    });
+			    $(".jcarousel-control-next").click(function(e) { 
+			    	removeZoom();
+			    });			
+			    
+			    $(document).keydown(function(e) {
+				    switch(e.which) {
+				        case 37: // left
+				        	$(".jcarousel-control-prev").click();
+				        break;				
+				
+				        case 39: // right
+				        	$(".jcarousel-control-next").click();
+				        break;
+				
+				        default: return; // exit this handler for other keys
+				    }
+				    e.preventDefault(); // prevent the default action (scroll / move caret)
+				});    	
+					   
+			   
+            </script>
     </div>
 </div>
-
-

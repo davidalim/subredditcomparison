@@ -108,6 +108,11 @@ a:hover .nav-arrow-up-accent, a:hover .nav-arrow-down-accent{
     padding: 0;
 }
 
+.list-image-content {
+	overflow:hidden;
+	width: 600px;
+}
+
 .list-content {
 	overflow:auto;
 	width: 600px;

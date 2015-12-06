@@ -11,6 +11,8 @@
 
     <title>Similarity between Subreddit Communities</title>
     
+	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+	<link rel="icon" href="./favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/jcarousel.basic.css">
 
@@ -22,8 +24,6 @@
 
 	<link href="css/sections.css" rel="stylesheet">
 	<link href="css/scrollbar.css" rel="stylesheet">
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="/favicon.ico" type="image/x-icon">
 	
     <!-- jQuery -->
     <script src="js/jquery.js"></script>    
@@ -66,16 +66,16 @@
                     </a>
                 </li>                
                 <li>
-                    <a href="#" id="section0">Introduction</a>
+                    <a href="#" id="section0" class="section">Introduction</a>
                 </li>
                 <li>
-                    <a href="#" id="section1">A Look at the Users</a>
+                    <a href="#" id="section1" class="section">A Look at the Users</a>
                 </li>
                 <li>
-                    <a href="#" id="section2">Comparing the Subreddits</a>
+                    <a href="#" id="section2" class="section">Comparing the Subreddits</a>
                 </li>
                 <li>
-                    <a href="#" id="section3">Natural Language Processing</a>
+                    <a href="#" id="section3" class="section">Natural Language Processing</a>
                 </li>
             </ul>              
             <a href="#" id="menu-bars-fade"> 
@@ -158,25 +158,11 @@
 		});
     }
     
-    $("#section0").click(function(e) {        
-	    fadeContent("section0.html");
-	    current_section = 0;
-    });
-        
-    $("#section1").click(function(e) {        
-	    fadeContent("section1.html");
-	    current_section = 1;
-    });
-    
-    $("#section2").click(function(e) {        
-	    fadeContent("section2.html");
-	    current_section = 2;
-    });
-    
-    $("#section3").click(function(e) {        
-	    fadeContent("section3.html");
-	    current_section = 3;
-    });
+    $(".section").click(function(){
+	     var id = this.id;
+	    fadeContent(id+".html");
+	    current_section =  parseInt(id.substring(7));
+	});      
     
     $(document.body).on("click",".arrow-down-container",function(e) {   
     	if(current_section+1 <= max_section){    		
@@ -195,7 +181,7 @@
     
     //---- Initial States ----   
     
-    current_section = 3;  
+    current_section = 0;  
     $('#page-content-wrapper').load("section"+current_section+".html");
     $("#menu-toggle").click();
     
