@@ -21,7 +21,7 @@
     <link href="css/simple-sidebar.css" rel="stylesheet">
 
 	<link href="css/sections.css" rel="stylesheet">
-	
+	<link href="css/scrollbar.css" rel="stylesheet">
 	
     <!-- jQuery -->
     <script src="js/jquery.js"></script>    
@@ -99,6 +99,7 @@
     <!-- Menu Toggle Script -->
     <script>    
         
+    var toggled = false;
     function toggle() {    	
         $("#wrapper").toggleClass("toggled");
         $(".sidebar-nav").toggleClass("toggled");
@@ -107,6 +108,18 @@
         $(".item-container").toggleClass("toggled");
         $(".item-container img").toggleClass("toggled");
         $(".jcarousel li").toggleClass("toggled");
+        toggled = !toggled;
+    }
+    
+    function closeMenu(){
+    	if(toggled == false){
+    		toggle();
+    	}
+    }
+    function openMenu(){
+    	if(toggled == true){
+    		toggle();
+    	}
     }
     
     $("#menu-toggle").click(function(e) {
@@ -123,6 +136,14 @@
         e.preventDefault();
         toggle();
     });
+    
+    
+	$( "#sidebar-wrapper" ).mouseenter(function() {
+	  	openMenu();
+	});	
+	$( "#sidebar-wrapper" ).mouseleave(function() {
+	  	closeMenu()
+	});
     
     var current_section = 0;
     var max_section = 3;
@@ -174,6 +195,7 @@
     
     current_section = 3;  
     $('#page-content-wrapper').load("section"+current_section+".html");
+    $("#menu-toggle").click();
     
     setTimeout(
 	  function() 

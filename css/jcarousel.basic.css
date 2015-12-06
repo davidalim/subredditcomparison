@@ -136,6 +136,8 @@ a:hover .nav-arrow-up-accent, a:hover .nav-arrow-down-accent{
 	width: 600px;
 	height: 425px;	
 	margin 0 auto;
+	overflow-y:auto;
+	overflow-x:hidden;
 }
 
 .jcarousel li img {
