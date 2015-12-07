@@ -2,11 +2,12 @@
 	    <script type="text/javascript" src="js/jquery.jcarousel.js"></script>	
 	    <script type="text/javascript" src="js/jcarousel.basic.js"></script>
 	    <script src="js/jquery.elevatezoom.js"></script>
+	    <script src="shared_subreddits.js"></script>
 </head>
 <div class="container-fluid">
     <div class="row">
     		<div class="nav-title">
-    			<h1 class="section-title">Section 1</h1>
+    			<h1 class="section-title">A Look at the Users</h1>
     		</div>
     		
     		<div class="arrow-bar">
@@ -23,18 +24,33 @@
 		                    <ul>
 		                        <li style="background-color: #bbbbbb;">
 		                        	<div class="list-content">
-			                        	<h2>Christianity</h2>
-			                        	<h4>In this section we present wordclouds which display significant words in the context of these subreddits.
-			                        		We did this by 
-			                        		</h4>
-			                        	<br/>
-			                        	<h4>We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.
-			                        		</h4>
+			                        	<h2>Theory</h2>
+			                        	<p>
+			                        		We begin our comparison of these two communities by first looking closely at the
+			                        		users who make up the communities.
+			                        	<p>
+			                        		A person on Reddit can interract with a subreddit in several ways, doing any combination 
+			                        		of: posting in the subreddit, commenting on posts, upvoting or downvoting posts and 
+			                        		reading posts. Therefore, we must decide what qualifies a user to be part of the subreddit 
+			                        		community, or rather which users best represent the subreddit community.
+			                        	<p>
+			                        		We need to spend a good amount of time discussing this, as the users we select become the 
+			                        		actual building blocks that form the community. How do we filter users who
+			                        		just posted randomly once in the group? How do we select users who represent
+			                        		the values of not just themselves, but others in the community as well?
+			                        		One solution that we can go with is to take the top 1000 posts from the 
+			                        		<a href="https://www.reddit.com/r/Christianity/top/?sort=top&t=all" target="blank">
+			                        		Top of All Time</a> category and use their authors as the users. This category
+			                        		lists all the posts, from all time, by the number of upvotes they've recieved. If a post
+			                        		has a lot of upvotes, it is likely that many people in the subreddit community 
+			                        		agree with the values of the post, making it a good representation of the community. Selecting
+			                        		posts from all time also prevents the selection from being subjective to recent events, 
+			                        		giving a more wholesome representation.
 		                        	</div>
 		                        </li>
 		                        <li style="background-color: #dddddd;">
 		                        	<div class="list-content">
-		                        	<h2>Islam</h2>
+		                        	<h2>Users Connected to Subreddits</h2>
 		                        	<h4>SubTitle</h4>
 		                        	<h5>afadsfsdaf</h5>
 		                        	<h5>afadsfsdaf</h5>
@@ -43,7 +59,7 @@
 		                        </li>
 		                        <li style="background-color: #bbbbbb;">
 		                        	<div class="list-content">
-		                        	<h2>Combined</h2>
+		                        	<h2>Users Connected to One Another</h2>
 		                        	<h4>SubTitle</h4>
 		                        	<h5>afadsfsdaf</h5>
 		                        	<h5>afadsfsdaf</h5>
@@ -87,13 +103,18 @@
 		            	
 		                <div class="jcarousel">
 		                    <ul>
-		                        <li><div id="demo-canvas" style="width:600px; height: 425px;"></div></li>
-		                        <li><div id="demo-canvas1" style="width:600px; height: 425px;"></div></li>
+		                        <li>
+		                        	<div class="list-content">
+		                        	<h2>User to Subreddit</h2>
+		                        	<img src='images/user_to_subreddit.png'/>
+		                        	</div>
+		                        </li>
+								<li>
+		                        	<div id="demo-canvas" style="width:600px; height: 425px;"></div>
+		                        	
+		                        </li>
 		                    </ul>
 		                </div>
-						<p class="photo-credits">
-		                    Click to Zoom
-		                </p>
 		                <div class="jcarousel-control-prev"></div>
 		                <div class="jcarousel-control-next"></div>
 		                
@@ -105,32 +126,32 @@
         
         
             <script>
-				var G = new jsnx.Graph();
-				G.addNode(1, {count: 12});
-				G.addNode(2, {count: 8});
-				G.addNode(3, {count: 15});
-				G.addEdgesFrom([[1,2],[2,3]]);
+				
 				 
-				jsnx.draw(G, {
+				jsnx.draw(shared_subreddits, {
 				  element: '#demo-canvas',
 				  withLabels: true,
+				  layout_attr: {
+				        charge: -30,
+				        linkDistance: 2
+				   },
 				  nodeAttr: {
 				    r: function(d) {
 				      // `d` has the properties `node`, `data` and `G`
 				      return d.data.count;
+				    },
+				    title: function(d) {
+				    	return d.label;
 				    }
+				  },
+				  nodeStyle: {
+				    fill: function(d) { 
+			            return d.data.color; 
+			       },
+			       stroke: 'none'
 				  }
 				});
-				jsnx.draw(G, {
-				  element: '#demo-canvas1',
-				  withLabels: true,
-				  nodeAttr: {
-				    r: function(d) {
-				      // `d` has the properties `node`, `data` and `G`
-				      return d.data.count;
-				    }
-				  }
-				});
+				
             
 	        	var max_index = 5;
 	        	var zoomActive = false;

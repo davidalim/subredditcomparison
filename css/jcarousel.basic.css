@@ -114,9 +114,11 @@ a:hover .nav-arrow-up-accent, a:hover .nav-arrow-down-accent{
 }
 
 .list-content {
-	overflow:auto;
+	overflow-y:auto;
+	overflow-x:hidden;
 	width: 600px;
 	padding: 15px;
+	padding-right: 30px;
 }
 
 	
