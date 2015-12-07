@@ -2,6 +2,7 @@
 	    <script type="text/javascript" src="js/jquery.jcarousel.js"></script>	
 	    <script type="text/javascript" src="js/jcarousel.basic.js"></script>
 	    <script src="js/jquery.elevatezoom.js"></script>
+	    <script src="js/jquery.easypiechart.js"></script>
 	    <script src="shared_subreddits.js"></script>
 </head>
 <div class="container-fluid">
@@ -59,7 +60,7 @@
 		                        </li>
 		                        <li style="background-color: #bbbbbb;">
 		                        	<div class="list-content">
-		                        	<h2>Users Connected to One Another</h2>
+		                        	<h2>Shared Subreddits</h2>
 		                        	<h4>SubTitle</h4>
 		                        	<h5>afadsfsdaf</h5>
 		                        	<h5>afadsfsdaf</h5>
@@ -68,7 +69,7 @@
 		                        </li>		                        
 		                        <li style="background-color: #dddddd;">
 		                        	<div class="list-content">
-		                        	<h2>In Common</h2>
+		                        	<h2>Users Connected to One Another</h2>
 		                        	<h4>SubTitle</h4>
 		                        	<h5>afadsfsdaf</h5>
 		                        	<h5>afadsfsdaf</h5>
@@ -110,8 +111,27 @@
 		                        	</div>
 		                        </li>
 								<li>
-		                        	<div id="demo-canvas" style="width:600px; height: 425px;"></div>
-		                        	
+		                        	<div id="shared_subreddits_graph" style="width:600px; height: 425px;"></div>		                        	
+		                        </li>
+		                        <li>
+		                        	<div class="list-content">		                        		
+		                        		<img src='images/user_to_user.png'/>
+		                        	</div>
+		                        </li>
+		                        <li>	
+		                        	<div class="list-content" style="text-align: center;">
+		                        	<h2>User to Subreddit</h2>		                        	                     	
+		                        	<span class="chart chart1" data-percent="92">
+										<span class="percent"></span>
+										</br>
+										<span>group 1</span>
+									</span>							                     	
+		                        	<span class="chart chart2" data-percent="33">
+										<span class="percent"></span>
+										</br>
+										<span>group 2</span>
+									</span>
+		                        	</div>	   
 		                        </li>
 		                    </ul>
 		                </div>
@@ -125,23 +145,15 @@
 			</div>
         
         
-            <script>
-				
+            <script>				
 				 
 				jsnx.draw(shared_subreddits, {
-				  element: '#demo-canvas',
+				  element: '#shared_subreddits_graph',
 				  withLabels: true,
-				  layout_attr: {
-				        charge: -30,
-				        linkDistance: 2
-				   },
 				  nodeAttr: {
 				    r: function(d) {
 				      // `d` has the properties `node`, `data` and `G`
 				      return d.data.count;
-				    },
-				    title: function(d) {
-				    	return d.label;
 				    }
 				  },
 				  nodeStyle: {
@@ -150,48 +162,48 @@
 			       },
 			       stroke: 'none'
 				  }
+				});				
+				
+			
+				
+				$('.chart1').easyPieChart({
+					onStep: function(from, to, percent) {
+						$(this.el).find('.percent').text(Math.round(percent));
+					},
+					trackColor: '#337AB7',
+					barColor:'#b73438',
+					scaleColor:false,
+					lineWidth:30,
+					animate: 2000,
+					size: 150,
+					lineCap:'circle'
 				});
 				
-            
-	        	var max_index = 5;
-	        	var zoomActive = false;
-	        	
-	        	function changeZoom(id) {
-				    $("#" + id).addClass("zoom");				    
-				    $('.zoom').elevateZoom({
-					     zoomType: "inner",
-					 	 cursor: "crosshair",
-					 	 zoomWindowFadeIn: 500,
-					  	 zoomWindowFadeOut: 750
-				    }); 			
-				    zoomActive = true;	    
-            	}
+				$('.chart2').easyPieChart({
+					onStep: function(from, to, percent) {
+						$(this.el).find('.percent').text(Math.round(percent));
+					},
+					trackColor: '#337AB7',
+					barColor:'#b73438',
+					scaleColor:false,
+					lineWidth:30,
+					animate: 2000,
+					size: 150,
+					lineCap:'circle'
+				});
+				
+				function reanimateCharts() {
+					$('.chart1').data('easyPieChart').reanimate();
+					$('.chart2').data('easyPieChart').reanimate();
+				}
+				
             	
-            	function removeZoom(){            		
-            		for (i = 1; i <= max_index; i++) { 
-		        		$.removeData("#cloud" + i, 'elevateZoom');//remove zoom instance from image
-					    $("#cloud" + i).removeClass("zoom");
-					}
-	    			$('.zoomContainer').remove();
-	    			zoomActive = false;	
-            	}
-            	
-            	$(".zoomable").click(function(){
-				     var id = this.id;
-				   	if(zoomActive == false)	{            			
-            			changeZoom(id);
-            		} else {
-            			removeZoom();
-            		}   
-				});            	
-            	
-            	var inTransition = false;
-			    $(".jcarousel-control-prev").click(function(e) {  
-			    	removeZoom();			
-			    });
-			    $(".jcarousel-control-next").click(function(e) { 
-			    	removeZoom();
-			    });			
+            	$(".jcarousel-control-prev").click(function(){
+            		reanimateCharts();
+            	});
+			    $(".jcarousel-control-next").click(function(){
+            		reanimateCharts();
+            	});
 			    
 			    $(document).keydown(function(e) {
 				    switch(e.which) {
