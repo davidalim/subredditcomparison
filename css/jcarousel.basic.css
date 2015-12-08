@@ -75,6 +75,8 @@ a:hover .nav-arrow-up-accent, a:hover .nav-arrow-down-accent{
 .jcarousel-wrapper {
     margin: 15px auto;
     position: relative;
+    width: 600px;
+    height: 425px;
     -webkit-border-radius: 5px;
        -moz-border-radius: 5px;
             border-radius: 5px;
