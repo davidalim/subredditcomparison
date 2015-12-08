@@ -6,6 +6,7 @@
   margin: 50px;
   margin-top: 50px;
   text-align: center;
+  font-size: 18px;
 }
 .chart canvas {
   position: absolute;
