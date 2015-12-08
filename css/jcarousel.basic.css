@@ -63,6 +63,7 @@ a:hover .nav-arrow-up-accent, a:hover .nav-arrow-down-accent{
 	width: 50%;
     height: 100%;
     float: left;
+    overflow: hidden;
 }
 
 .panel-right {
@@ -70,12 +71,13 @@ a:hover .nav-arrow-up-accent, a:hover .nav-arrow-down-accent{
     height: 100%;
     float: left;
     padding-left: 20px;
+    overflow: hidden;
 }
 
 .jcarousel-wrapper {
     margin: 15px auto;
     position: relative;
-    width: 600px;
+    width: 550px;
     height: 425px;
     -webkit-border-radius: 5px;
        -moz-border-radius: 5px;
@@ -112,16 +114,15 @@ a:hover .nav-arrow-up-accent, a:hover .nav-arrow-down-accent{
 
 .list-image-content {
 	overflow:hidden;
-	width: 600px;
+	width: 550px;
 }
 
 .list-content {
 	overflow-y:auto;
 	overflow-x:hidden;
-	width: 600px;
+	width: 550px;
 	height: 425px;
 	padding: 15px;
-	padding-right: 40px;
 }
 
 	
@@ -146,7 +147,7 @@ p {
 
 .jcarousel li {
     float: left;    
-	width: 600px;
+	width: 550px;
 	height: 425px;	
 	margin 0 auto;
 	overflow-y:auto;

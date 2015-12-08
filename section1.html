@@ -76,7 +76,7 @@
 		                        </li>		                        
 		                        <li style="background-color: #dddddd;">
 		                        	<div class="list-content">
-		                        	<h2>Users Connected to One Another</h2>
+		                        	<h2>Users Connected to Users</h2>
 		                        	<p>
 		                        		Now that we've seen that users from both communities do indeed overlap in the subreddits they
 		                        		subscribe to, we remove the subreddits from the graph and create a network where users
@@ -110,8 +110,22 @@
 		                        		<a href="http://perso.crans.org/aynaud/communities/" target="blank">Python's</a>
 		                        		<a href="https://en.wikipedia.org/wiki/Louvain_Modularity" target="blank">Louvain-algorithm</a>
 		                        		to see if better communities can be detected. 
-		                        	<p> The Louvain-algorithm extracts communities from the network in order to optimize
-		                        		modularity. 
+		                        	<p> 
+		                        		The Louvain-algorithm extracts communities from the network in order to optimize
+		                        		modularity. After assigning each user to a community that is created by this algorithm, 
+		                        		the graph to the right displays the connected users again, this time colored
+		                        		a differnt shade of grey coressponding to a community. From this partitioning
+		                        		we calculate a modularity of <b>0.12</b>.  
+		                        	<p>
+		                        		Since this value is quite larger than the modularity value we calculated before, we can say
+		                        		that the Christianity and Islam subreddits aren't nessesariy the key factor in communities 
+		                        		between these users.
+		                        	<p>
+		                        		Furthermore, we can look at the two largest communities that the Louvain-algorithm found
+		                        		and see which kind of users make them up. We see that the largest community is made up of 
+		                        		48% Islam subreddit users and 52% Christianity subreddit users. The second largest
+		                        		community is made up of 38% Islam subreddit users and 62% Christianity subreddit users. 
+		                        		Both are pretty even splits!
 		                        	</div>
 		                        </li>
 		                    </ul>
@@ -146,7 +160,9 @@
 		                        	</div>
 		                        </li>
 								<li>
-		                        	<div id="shared_subreddits_graph" style="width:600px; height: 425px;"></div>		                        	
+									<div class="list-content"  style="padding: 0; height: 425px;">
+		                        		<div id="shared_subreddits_graph" style="height: 425px;"></div>	
+		                        	</div>                        	
 		                        </li>
 		                        <li>
 		                        	<div class="list-content">		                        		
@@ -154,8 +170,8 @@
 		                        	</div>
 		                        </li>
 		                        <li>	
-		                        	<div class="list-content" style="text-align: center;">
-		                        	<h2>User to Subreddit</h2>		                        	                     	
+		                        	<div class="list-content" style="text-align: center;">   
+									<img src='images/community_detection.png'/>                     	                     	
 		                        	<span class="chart chart1" data-percent="52">
 										<span class="percent"></span>
 										</br>
