@@ -30,8 +30,9 @@
 	                        			<p>
 	                        				One way to measure the significance is by calculating the 
 	                        				<a href="https://en.wikipedia.org/wiki/Tf%E2%80%93idf" target="blank">TF-IDF</a>
-	                        				of each word. The TF-IDF gives a significance to words that appear many times
-	                        				in a context, but also takes away significance from words that appear in many
+	                        				of each word. The TF-IDF gives a significance-score to each word, assigning points
+	                        				to words that appear many times
+	                        				in a context, but also taking away points from words that appear in many
 	                        				contexts. This makes sense as words that are not unique to one text are often
 	                        				less significant. 
 	                        			<p> 	                        			
@@ -48,7 +49,7 @@
 	                        			<p>
 	                        				We start off by retreiving text from the Christianity and Islam subreddit groups.
 	                        				We do this by simply stringing together the top 1000 posts (title and content)
-	                        				along with their comments and storing them in text files. We tokenize and 
+	                        				along with their comments and store them in text files. We tokenize and 
 	                        				clean the text, removing
 	                        				<a href="https://en.wikipedia.org/wiki/Stop_words" target="blank">stopwords</a>
 	                        				and numbers. Since we are pooling the communities seperately with other
@@ -57,8 +58,10 @@
 	                        				Next we calculate the TF-IDF score. We group Islam with Sports, Gaming, Music and Movies 
 	                        				and find the TF-IDF scores for every word. We do the exact same with the Christianity
 	                        				text. At this point we have a score for every word in the Islam and Chrstianity 
-	                        				subreddt texts indicationg how significant that is in the group. Now we 
-	                        				will proceed to analyze these results using wordclouds.     
+	                        				subreddt texts indicating how significant that word is in the group. 
+	                        			<p>
+	                        				We will proceed analyze these results using wordclouds (like this examle one
+	                        				on the right).     
 		                        	</div>
 		                        </li>
 		                         <li style="background-color: #bbbbbb;">
@@ -66,7 +69,7 @@
 			                        	<h2>Christianity</h2>
 			                        	<p>
 			                        		This first wordcloud displays the words that are most significant in 
-			                        		the Christianity subreddit. Feel free to click on the image and explore
+			                        		the Christianity subreddit. Feel free to click on the image to zoom and explore
 			                        		some of the words. In general, the larger the word means the more significant.
 			                        	<p>
 			                        		As you would guess, most of these words are related to Christianity. 
@@ -97,7 +100,7 @@
 			                        		made lists of the top 1000 most significant words from both subreddits, and took
 			                        		words that appeared in both lists. 
 			                        	<p>
-			                        		There are some words that are cool to see these two communities have in common.
+			                        		There are some words that are cool to see that these two communities have in common.
 			                        		For instance, <b>compassion</b>, <b>forgiveness</b>, <b>repentence</b>, <b>feminism</b>, 
 			                        		<b>message</b> and <b>worshiping</b>.
 		                        	</div>
@@ -107,10 +110,10 @@
 		                        	<h2>Closest Significance</h2>
 									<p>
 										This is an interesting wordcloud where the words are ones that the two subreddits
-										had similar in significance. In other words, we took all of the words that the
-										subreddits had in common and calculated the absolute difference between their 
-										TF-IDF scores. In general, the larger the word means the smaller the difference 
-										and the closer in similarity of significant.
+										have similar in significance. In other words, we take all of the words that the
+										subreddits have in common and calvulate the absolute difference between their 
+										TF-IDF scores. In general, the larger the word means the smaller the difference
+										between the scores, indicating more similarity in the significance placed on the word.
 									<p>
 										We can see that the words <b>christianity</b>, <b>islam</b>, and <b>atheism</b> stand out here. 
 										This is interesting beacuse it appears that both groups talk about these three
@@ -127,7 +130,7 @@
 									  	Islam and Christianity texts, and grouping it with the other subreddits. Therefore
 									  	these words are ones that stand out the most out of the two communities altogether.
 									 <p>
-									 	Naturally we see that the words "islam" and "christianity" surface along with other
+									 	Naturally we see that the words <b>Islam</b> and <b>Christianity</b> surface along with other
 									 	unsurprizing words such as <b>muslim</b>, <b>mosque</b>, <b>pastor</b>, 
 									 	<b>reddit</b>, <b>comment</b>, and <b>scripture</b>.
 										

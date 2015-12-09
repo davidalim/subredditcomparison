@@ -1,0 +1,296 @@
+var top_subreddits = new jsnx.Graph();
+top_subreddits.addNode('cringepics', {count: 2, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','cringepics');
+top_subreddits.addEdge('Islam','cringepics');
+top_subreddits.addNode('fffffffuuuuuuuuuuuu', {count: 2, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','fffffffuuuuuuuuuuuu');
+top_subreddits.addEdge('Islam','fffffffuuuuuuuuuuuu');
+top_subreddits.addNode('Conservative', {count: 5, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','Conservative');
+top_subreddits.addNode('dataisbeautiful', {count: 5, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','dataisbeautiful');
+top_subreddits.addNode('Palestine', {count: 5, color:'#b73438'});
+top_subreddits.addEdge('Islam','Palestine');
+top_subreddits.addNode('islam', {count: 6, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','islam');
+top_subreddits.addNode('relationships', {count: 5, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','relationships');
+top_subreddits.addNode('malefashionadvice', {count: 7, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','malefashionadvice');
+top_subreddits.addNode('syriancivilwar', {count: 5, color:'#b73438'});
+top_subreddits.addEdge('Islam','syriancivilwar');
+top_subreddits.addNode('Showerthoughts', {count: 3, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','Showerthoughts');
+top_subreddits.addEdge('Islam','Showerthoughts');
+top_subreddits.addNode('woahdude', {count: 2, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','woahdude');
+top_subreddits.addEdge('Islam','woahdude');
+top_subreddits.addNode('WTF', {count: 7, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','WTF');
+top_subreddits.addEdge('Islam','WTF');
+top_subreddits.addNode('TrueChristian', {count: 11, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','TrueChristian');
+top_subreddits.addNode('soccer', {count: 7, color:'#b73438'});
+top_subreddits.addEdge('Islam','soccer');
+top_subreddits.addNode('BlackPeopleTwitter', {count: 5, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','BlackPeopleTwitter');
+top_subreddits.addNode('photoshopbattles', {count: 7, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','photoshopbattles');
+top_subreddits.addNode('food', {count: 8, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','food');
+top_subreddits.addNode('JusticePorn', {count: 6, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','JusticePorn');
+top_subreddits.addNode('UpliftingNews', {count: 5, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','UpliftingNews');
+top_subreddits.addNode('trees', {count: 7, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','trees');
+top_subreddits.addNode('Jokes', {count: 1, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','Jokes');
+top_subreddits.addEdge('Islam','Jokes');
+top_subreddits.addNode('Fitness', {count: 2, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','Fitness');
+top_subreddits.addEdge('Islam','Fitness');
+top_subreddits.addNode('thewalkingdead', {count: 5, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','thewalkingdead');
+top_subreddits.addNode('gifs', {count: 5, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','gifs');
+top_subreddits.addEdge('Islam','gifs');
+top_subreddits.addNode('nfl', {count: 9, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','nfl');
+top_subreddits.addNode('4chan', {count: 5, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','4chan');
+top_subreddits.addNode('AdviceAnimals', {count: 9, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','AdviceAnimals');
+top_subreddits.addEdge('Islam','AdviceAnimals');
+top_subreddits.addNode('SubredditDrama', {count: 6, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','SubredditDrama');
+top_subreddits.addNode('Libertarian', {count: 5, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','Libertarian');
+top_subreddits.addNode('cringe', {count: 1, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','cringe');
+top_subreddits.addEdge('Islam','cringe');
+top_subreddits.addNode('StarWars', {count: 7, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','StarWars');
+top_subreddits.addNode('mildlyinteresting', {count: 4, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','mildlyinteresting');
+top_subreddits.addEdge('Islam','mildlyinteresting');
+top_subreddits.addNode('Christianity', {count: 8, color:'#b73438'});
+top_subreddits.addEdge('Islam','Christianity');
+top_subreddits.addNode('interestingasfuck', {count: 6, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','interestingasfuck');
+top_subreddits.addNode('books', {count: 2, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','books');
+top_subreddits.addEdge('Islam','books');
+top_subreddits.addNode('TwoXChromosomes', {count: 6, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','TwoXChromosomes');
+top_subreddits.addNode('Android', {count: 1, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','Android');
+top_subreddits.addEdge('Islam','Android');
+top_subreddits.addNode('Reformed', {count: 6, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','Reformed');
+top_subreddits.addNode('gameofthrones', {count: 6, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','gameofthrones');
+top_subreddits.addNode('space', {count: 6, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','space');
+top_subreddits.addNode('AskReddit', {count: 14, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','AskReddit');
+top_subreddits.addEdge('Islam','AskReddit');
+top_subreddits.addNode('DebateReligion', {count: 1, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','DebateReligion');
+top_subreddits.addEdge('Islam','DebateReligion');
+top_subreddits.addNode('religion', {count: 1, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','religion');
+top_subreddits.addEdge('Islam','religion');
+top_subreddits.addNode('leagueoflegends', {count: 5, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','leagueoflegends');
+top_subreddits.addNode('worldnews', {count: 7, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','worldnews');
+top_subreddits.addEdge('Islam','worldnews');
+top_subreddits.addNode('pcmasterrace', {count: 6, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','pcmasterrace');
+top_subreddits.addNode('bestof', {count: 3, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','bestof');
+top_subreddits.addEdge('Islam','bestof');
+top_subreddits.addNode('facepalm', {count: 9, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','facepalm');
+top_subreddits.addNode('circlejerk', {count: 2, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','circlejerk');
+top_subreddits.addEdge('Islam','circlejerk');
+top_subreddits.addNode('Frugal', {count: 6, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','Frugal');
+top_subreddits.addNode('news', {count: 5, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','news');
+top_subreddits.addEdge('Islam','news');
+top_subreddits.addNode('doctorwho', {count: 5, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','doctorwho');
+top_subreddits.addNode('brokehugs', {count: 5, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','brokehugs');
+top_subreddits.addNode('Unexpected', {count: 5, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','Unexpected');
+top_subreddits.addNode('personalfinance', {count: 6, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','personalfinance');
+top_subreddits.addNode('creepy', {count: 5, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','creepy');
+top_subreddits.addNode('pics', {count: 12, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','pics');
+top_subreddits.addEdge('Islam','pics');
+top_subreddits.addNode('buildapc', {count: 5, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','buildapc');
+top_subreddits.addNode('TrueReddit', {count: 6, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','TrueReddit');
+top_subreddits.addNode('todayilearned', {count: 9, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','todayilearned');
+top_subreddits.addEdge('Islam','todayilearned');
+top_subreddits.addNode('Catholicism', {count: 9, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','Catholicism');
+top_subreddits.addNode('reactiongifs', {count: 2, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','reactiongifs');
+top_subreddits.addEdge('Islam','reactiongifs');
+top_subreddits.addNode('Music', {count: 4, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','Music');
+top_subreddits.addEdge('Islam','Music');
+top_subreddits.addNode('exmuslim', {count: 6, color:'#b73438'});
+top_subreddits.addEdge('Islam','exmuslim');
+top_subreddits.addNode('EarthPorn', {count: 5, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','EarthPorn');
+top_subreddits.addNode('tifu', {count: 1, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','tifu');
+top_subreddits.addEdge('Islam','tifu');
+top_subreddits.addNode('loseit', {count: 5, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','loseit');
+top_subreddits.addNode('OldSchoolCool', {count: 5, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','OldSchoolCool');
+top_subreddits.addNode('AskHistorians', {count: 2, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','AskHistorians');
+top_subreddits.addEdge('Islam','AskHistorians');
+top_subreddits.addNode('OutOfTheLoop', {count: 5, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','OutOfTheLoop');
+top_subreddits.addNode('sports', {count: 6, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','sports');
+top_subreddits.addNode('explainlikeimfive', {count: 3, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','explainlikeimfive');
+top_subreddits.addEdge('Islam','explainlikeimfive');
+top_subreddits.addNode('tipofmytongue', {count: 8, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','tipofmytongue');
+top_subreddits.addNode('mildlyinfuriating', {count: 6, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','mildlyinfuriating');
+top_subreddits.addNode('WritingPrompts', {count: 5, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','WritingPrompts');
+top_subreddits.addNode('LifeProTips', {count: 2, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','LifeProTips');
+top_subreddits.addEdge('Islam','LifeProTips');
+top_subreddits.addNode('skyrim', {count: 6, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','skyrim');
+top_subreddits.addNode('NoFap', {count: 6, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','NoFap');
+top_subreddits.addNode('television', {count: 9, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','television');
+top_subreddits.addNode('worldpolitics', {count: 6, color:'#b73438'});
+top_subreddits.addEdge('Islam','worldpolitics');
+top_subreddits.addNode('science', {count: 4, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','science');
+top_subreddits.addEdge('Islam','science');
+top_subreddits.addNode('movies', {count: 5, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','movies');
+top_subreddits.addEdge('Islam','movies');
+top_subreddits.addNode('history', {count: 5, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','history');
+top_subreddits.addNode('videos', {count: 8, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','videos');
+top_subreddits.addEdge('Islam','videos');
+top_subreddits.addNode('arabs', {count: 5, color:'#b73438'});
+top_subreddits.addEdge('Islam','arabs');
+top_subreddits.addNode('conspiracy', {count: 1, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','conspiracy');
+top_subreddits.addEdge('Islam','conspiracy');
+top_subreddits.addNode('DIY', {count: 5, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','DIY');
+top_subreddits.addNode('politics', {count: 5, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','politics');
+top_subreddits.addEdge('Islam','politics');
+top_subreddits.addNode('technology', {count: 4, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','technology');
+top_subreddits.addEdge('Islam','technology');
+top_subreddits.addNode('funny', {count: 12, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','funny');
+top_subreddits.addEdge('Islam','funny');
+top_subreddits.addNode('MURICA', {count: 6, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','MURICA');
+top_subreddits.addNode('self', {count: 5, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','self');
+top_subreddits.addNode('IAmA', {count: 7, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','IAmA');
+top_subreddits.addEdge('Islam','IAmA');
+top_subreddits.addNode('comics', {count: 6, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','comics');
+top_subreddits.addNode('nottheonion', {count: 2, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','nottheonion');
+top_subreddits.addEdge('Islam','nottheonion');
+top_subreddits.addNode('gaming', {count: 7, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','gaming');
+top_subreddits.addEdge('Islam','gaming');
+top_subreddits.addNode('reddit.com', {count: 2, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','reddit.com');
+top_subreddits.addEdge('Islam','reddit.com');
+top_subreddits.addNode('aww', {count: 7, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','aww');
+top_subreddits.addEdge('Islam','aww');
+top_subreddits.addNode('askscience', {count: 2, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','askscience');
+top_subreddits.addEdge('Islam','askscience');
+top_subreddits.addNode('Futurology', {count: 5, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','Futurology');
+top_subreddits.addNode('DebateAChristian', {count: 5, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','DebateAChristian');
+top_subreddits.addNode('Games', {count: 6, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','Games');
+top_subreddits.addNode('Minecraft', {count: 7, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','Minecraft');
+top_subreddits.addNode('Sidehugs', {count: 6, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','Sidehugs');
+top_subreddits.addNode('Hijabis', {count: 6, color:'#b73438'});
+top_subreddits.addEdge('Islam','Hijabis');
+top_subreddits.addNode('CFB', {count: 6, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','CFB');
+top_subreddits.addNode('atheism', {count: 5, color:'#7B5472'});
+top_subreddits.addEdge('Christianity','atheism');
+top_subreddits.addEdge('Islam','atheism');
+top_subreddits.addNode('TumblrInAction', {count: 7, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','TumblrInAction');
+top_subreddits.addNode('me_irl', {count: 5, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','me_irl');
+top_subreddits.addNode('ImGoingToHellForThis', {count: 5, color:'#337AB7'});
+top_subreddits.addEdge('Christianity','ImGoingToHellForThis');
+top_subreddits.addNode('Christianity', {count: 22, color:'#337AB7'});
+top_subreddits.addNode('Islam', {count: 22, color:'#b73438'});
+
+function draw_top_subreddits_graph(element){
+	jsnx.draw(top_subreddits, {
+					  element: element,
+					  withLabels: false,
+					  layoutAttr: {
+					      charge: -120,
+					      linkDistance: 150,
+					      friction: .1	
+					   },
+					  nodeAttr: {
+					    r: function(d) {
+					      // `d` has the properties `node`, `data` and `G`
+					      return d.data.count;
+					    }
+					  },
+					  nodeStyle: {
+					    fill: function(d) { 
+				            return d.data.color; 
+				       },
+				       stroke: 'none'
+					  },					  
+					  edgeStyle: {
+					      fill: '#333333',
+					      opacity: .5
+					  },					  
+					  labelStyle: {
+					      fill: '#333333'
+					  }
+					});	
+}

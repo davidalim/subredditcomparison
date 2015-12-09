@@ -1,3 +1,17 @@
+.intro-video {
+	position:absolute;
+	top:200px;
+	right:50px;
+}
+
+.intro-description {
+	position:absolute;
+	width: 500px;
+	overflow: hidden;
+	top:180px;
+	left:50px;
+}
+
 .nav-arrows-container {
 	width: 20px;
     display: inline-block;

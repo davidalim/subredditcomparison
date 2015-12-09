@@ -57,8 +57,8 @@
 		                        		we can look at how they compare to one another. We start by looking at the other subreddit
 		                        		communities that the users have also posted or commented in. 
 		                        	<p>
-		                        		The graph to the right show both types of users linking to the differnt differnt subreddits
-		                        		that they link to. While there are many more subreddits that the usrers have posted to,
+		                        		The graph to the right show both types of users linking to the differnt subreddits
+		                        		that they are involved in. While there are many more subreddits that the users have posted to,
 		                        		we filter by subreddits with the most users. This graph is nice to visualize how both types 
 		                        		of users are indeed connected by the other subreddits that they belong to.
 		                        	</div>
@@ -67,7 +67,7 @@
 		                        	<div class="list-content">
 		                        	<h2>Shared Subreddits</h2>
 		                        	<p>
-		                        		Here we've taken that shared subreddits (green nodes from before) and colored them based on 
+		                        		Here we've taken the shared subreddits (green nodes from before) and colored them based on 
 		                        		their makeup of Christianity users (more blue) and Islam users (more red). We can see that most
 		                        		all of these bubbles are purple, indicating a pretty even distribution of islam and christianity
 		                        		users.
@@ -88,17 +88,20 @@
 		                        	<p>
 		                        		With this network of interconnected users, we can use the concept of 
 		                        		<a href="https://en.wikipedia.org/wiki/Modularity_(networks)" target="blank">
-		                        			modularity. 
+		                        			modularity 
 		                        		</a>
-		                        		Modularity is a ratio of the number of edges in groups compared to the number of edges
-		                        		that would appear if they were placed at random. Therefore, if the modularity is greater than
-		                        		one then the number of edges that appear in the groups is greater than the number of
+		                        		. In a network where nodes are assigned to a specific group, modularity is a ratio of the 
+		                        		number of edges in groups compared to the number of edges
+		                        		that would appear if they were placed at random. Therefore, if the modularity is positive, then 
+		                        		the number of edges that appear in the groups is greater than the number of
 		                        		edges expected if placed randomly.
 		                        	<p>
-		                        		When we caclulate the modulartity of the network where groups are defined by the islam and 
-		                        		christianity subreddits, we get a value of <b>0.035</b>. While this value is positive,
+		                        		For instance, when we caclulate the modulartity of the network where groups are defined by the Islam and 
+		                        		Christianity subreddits, we get a value of <b>0.035</b>. While this value is positive,
 		                        		it is quite low and indicates that there is not much distinction of communities between 
-		                        		the user in relation to them belonging to the christianity or islam subreddit.
+		                        		the user in relation to them belonging to the Christianity or Islam subreddit. In other words,
+		                        		users from the Christianity subreddit are no more inclined to connect to another users from the 
+		                        		Christianity subreddit than they are to a user from the Islam subreddit.
 		                        	</div>
 		                        </li>
 		                        <li style="background-color: #bbbbbb;">
@@ -161,7 +164,7 @@
 		                        </li>
 								<li>
 									<div class="list-content"  style="padding: 0; height: 425px;">
-		                        		<div id="shared_subreddits_graph" style="height: 425px;"></div>	
+		                        		<div id="shared_subreddits_graph" style="height: 415px;"></div>	
 		                        	</div>                        	
 		                        </li>
 		                        <li>
@@ -198,22 +201,30 @@
         
             <script>				
 				 
-				jsnx.draw(shared_subreddits, {
-				  element: '#shared_subreddits_graph',
-				  withLabels: true,
-				  nodeAttr: {
-				    r: function(d) {
-				      // `d` has the properties `node`, `data` and `G`
-				      return d.data.count;
-				    }
-				  },
-				  nodeStyle: {
-				    fill: function(d) { 
-			            return d.data.color; 
-			       },
-			       stroke: 'none'
-				  }
-				});				
+				function drawGraph() {
+					jsnx.draw(shared_subreddits, {
+					  element: '#shared_subreddits_graph',
+					  withLabels: true,
+					  nodeAttr: {
+					    r: function(d) {
+					      // `d` has the properties `node`, `data` and `G`
+					      return d.data.count;
+					    }
+					  },
+					  nodeStyle: {
+					    fill: function(d) { 
+				            return d.data.color; 
+				       },
+				       stroke: 'none',
+				       opacity: .7
+					  },					  
+					  labelStyle: {
+					      fill: '#333333'
+					  }
+					});	
+				}
+				
+							
 				
 			
 				
@@ -251,9 +262,11 @@
             	
             	$(".jcarousel-control-prev").click(function(){
             		reanimateCharts();
+            		drawGraph();
             	});
 			    $(".jcarousel-control-next").click(function(){
             		reanimateCharts();
+            		drawGraph();
             	});
 			    
 			    $(document).keydown(function(e) {

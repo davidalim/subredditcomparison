@@ -2,6 +2,9 @@
 	    <script type="text/javascript" src="js/jquery.jcarousel.js"></script>	
 	    <script type="text/javascript" src="js/jcarousel.basic.js"></script>
 	    <script src="js/jquery.elevatezoom.js"></script>
+	    <script src="top_subreddits.js"></script>
+	    <script src="christianity_centrality.js"></script>
+	    <script src="islam_centrality.js"></script>
 </head>
 <div class="container-fluid">
     <div class="row">
@@ -23,27 +26,27 @@
 		                    <ul>
 		                        <li style="background-color: #bbbbbb;">
 		                        	<div class="list-content">
-			                        	<h2>Christianity</h2>
-			                        	<h4>In this section we present wordclouds which display significant words in the context of these subreddits.
-			                        		We did this by 
-			                        		</h4>
-			                        	<br/>
-			                        	<h4>We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.We first focus on the words that are most significant in the Christianity subreddit.
-			                        		</h4>
+			                        	<h2>Theory</h2>
+			                        	<p>
+			                        		Now that we've looked at the users who make up the Christianity and Islam
+			                        		subreddit communities, it's time to compare the communities as a whole. For this
+			                        		analysis, we agregate the statistics that we've gathered from the individual 
+			                        		users and use it to represent the subreddit communities. 
+			                        		
 		                        	</div>
 		                        </li>
 		                        <li style="background-color: #dddddd;">
 		                        	<div class="list-content">
-		                        	<h2>Islam</h2>
-		                        	<h4>SubTitle</h4>
-		                        	<h5>afadsfsdaf</h5>
-		                        	<h5>afadsfsdaf</h5>
-		                        	<h5>afadsfsdaf</h5>
+			                        	<h2>Christianity Central Subreddits</h2>
+			                        	<h4>SubTitle</h4>
+			                        	<h5>afadsfsdaf</h5>
+			                        	<h5>afadsfsdaf</h5>
+			                        	<h5>afadsfsdaf</h5>
 		                        	</div>
 		                        </li>
 		                        <li style="background-color: #bbbbbb;">
 		                        	<div class="list-content">
-		                        	<h2>Combined</h2>
+		                        	<h2>Islam Central Subreddits</h2>
 		                        	<h4>SubTitle</h4>
 		                        	<h5>afadsfsdaf</h5>
 		                        	<h5>afadsfsdaf</h5>
@@ -52,16 +55,7 @@
 		                        </li>		                        
 		                        <li style="background-color: #dddddd;">
 		                        	<div class="list-content">
-		                        	<h2>In Common</h2>
-		                        	<h4>SubTitle</h4>
-		                        	<h5>afadsfsdaf</h5>
-		                        	<h5>afadsfsdaf</h5>
-		                        	<h5>afadsfsdaf</h5>
-		                        	</div>
-		                        </li>
-		                        <li style="background-color: #bbbbbb;">
-		                        	<div class="list-content">
-		                        	<h2>Closest Significance</h2>
+		                        	<h2>Overlapping Central Subreddits</h2>
 		                        	<h4>SubTitle</h4>
 		                        	<h5>afadsfsdaf</h5>
 		                        	<h5>afadsfsdaf</h5>
@@ -87,16 +81,38 @@
 		            	
 		                <div class="jcarousel">
 		                    <ul>
-		                        <li><img id="cloud1" class="zoomable" src='images/small/Christianity_wordcloud.png' data-zoom-image="images/large/Christianity_wordcloud.png"/></li>
-		                        <li><img id="cloud2" class="zoomable" src='images/small/Islam_wordcloud.png' data-zoom-image="images/large/Islam_wordcloud.png"/></li>
-		                        <li><img id="cloud3" class="zoomable" src='images/small/Combined_wordcloud.png' data-zoom-image="images/large/Combined_wordcloud.png"/></li>
-		                        <li><img id="cloud4" class="zoomable" src='images/small/InCommon_wordcloud.png' data-zoom-image="images/large/InCommon_wordcloud.png"/></li>
-		                        <li><img id="cloud5" class="zoomable" src='images/small/Difference of Scores_wordcloud.png' data-zoom-image="images/large/Difference of Scores_wordcloud.png"/></li>
+		                        <li>
+		                        	<div class="list-content"  style="padding: 0; height: 425px; ">
+		                        		<div id="top_subreddits_graph" style="height: 415px;"></div>	
+		                        	</div> 
+		                        </li>
+		                    	<li>
+		                        	<div class="list-content">
+		                        		<img src='images/christianity_centrality.png'/>		                        		
+		                        		<marquee id="christianity_centrality" behavior="scroll" direction="left"></marquee>
+		                        	</div>
+		                        </li>
+		                        <li>
+		                        	<div class="list-content">
+		                        		<img src='images/islam_centrality.png'/>
+		                        		<marquee id="islam_centrality" behavior="scroll" direction="left"></marquee>
+		                        	</div>
+		                        </li>
+		                        <li>
+		                        	<div class="list-content">
+			                        	<marquee behavior="scroll" direction="left" scrollamount="3" style="color:#337AB7;font-size: 30px;"><b>StarWars - interestingasfuck - TrueChristian - photoshopbattles - facepalm</b></marquee>
+		                        		<marquee behavior="scroll" direction="left" scrollamount="4" style="color:#337AB7;font-size: 30px;"><b>television - Frugal - nfl - space - TumblrInAction</b></marquee>
+		                        		<marquee behavior="scroll" direction="left" scrollamount="7" style="color:#7B5472;font-size: 30px;"><b>mildlyinteresting - videos - todayilearned - reactiongifs - fffffffuuuuuuuuuuuu - Christianity - books - Music - politics - Android</b></marquee>
+		                        		<marquee behavior="scroll" direction="left" scrollamount="6" style="color:#7B5472;font-size: 30px;"><b>technology - funny - AskHistorians - tipofmytongue - IAmA - AskReddit - Showerthoughts - food - woahdude - WTF</b></marquee>
+		                        		<marquee behavior="scroll" direction="left" scrollamount="8" style="color:#7B5472;font-size: 30px;"><b>worldnews - pcmasterrace - explainlikeimfive - gaming - bestof - Jokes - aww - askscience - circlejerk - nottheonion</b></marquee>
+		                        		<marquee behavior="scroll" direction="left" scrollamount="4" style="color:#7B5472;font-size: 30px;"><b>LifeProTips - cringepics - news - gifs - science - pics - atheism - movies - AdviceAnimals - cringe</b></marquee>
+		                        		<marquee behavior="scroll" direction="left" scrollamount="6" style="color:#b73438;font-size: 30px;"><b>MapPorn - Fitness - Documentaries - tifu - 4chan </b></marquee>
+		                        		<marquee behavior="scroll" direction="left" scrollamount="3" style="color:#b73438;font-size: 30px;"><b>reddit.com - soccer - worldpolitics - conspiracy - techsupport</b></marquee>
+		                        	
+		                        	</div>
+		                        </li>
 		                    </ul>
 		                </div>
-						<p class="photo-credits">
-		                    Click to Zoom
-		                </p>
 		                <div class="jcarousel-control-prev"></div>
 		                <div class="jcarousel-control-next"></div>
 		                
@@ -108,46 +124,11 @@
         
         
             <script>
-	        	var max_index = 5;
-	        	var zoomActive = false;
 	        	
-	        	function changeZoom(id) {
-				    $("#" + id).addClass("zoom");				    
-				    $('.zoom').elevateZoom({
-					     zoomType: "inner",
-					 	 cursor: "crosshair",
-					 	 zoomWindowFadeIn: 500,
-					  	 zoomWindowFadeOut: 750
-				    }); 			
-				    zoomActive = true;	    
-            	}
-            	
-            	function removeZoom(){            		
-            		for (i = 1; i <= max_index; i++) { 
-		        		$.removeData("#cloud" + i, 'elevateZoom');//remove zoom instance from image
-					    $("#cloud" + i).removeClass("zoom");
-					}
-	    			$('.zoomContainer').remove();
-	    			zoomActive = false;	
-            	}
-            	
-            	$(".zoomable").click(function(){
-				     var id = this.id;
-				   	if(zoomActive == false)	{            			
-            			changeZoom(id);
-            		} else {
-            			removeZoom();
-            		}   
-				});            	
-            	
-            	var inTransition = false;
-			    $(".jcarousel-control-prev").click(function(e) {  
-			    	removeZoom();			
-			    });
-			    $(".jcarousel-control-next").click(function(e) { 
-			    	removeZoom();
-			    });			
-			    
+	        	draw_top_subreddits_graph('#top_subreddits_graph');
+				$('#christianity_centrality').html(christianity_centrality);
+				$('#islam_centrality').html(islam_centrality);
+	        	
 			    $(document).keydown(function(e) {
 				    switch(e.which) {
 				        case 37: // left
