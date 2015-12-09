@@ -6,9 +6,23 @@
 
 .intro-description {
 	position:absolute;
-	width: 500px;
+	width: 525px;
 	overflow: hidden;
-	top:180px;
+	top:170px;
+	left:50px;
+}
+
+.outro-video {
+	position:absolute;
+	top:200px;
+	right:200px;
+}
+
+.outro-description {
+	position:absolute;
+	width: 525px;
+	overflow: hidden;
+	top:170px;
 	left:50px;
 }
 
