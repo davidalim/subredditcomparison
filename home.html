@@ -156,17 +156,20 @@
     var current_section = 0;
     var max_section = 3;
     
-    function fadeContent(path){
+    function fadeContent(id){
     	$('#page-content-wrapper').fadeOut('medium', function(){
-		    $('#page-content-wrapper').load(path, function(){
+		    $('#page-content-wrapper').load(id+".html", function(){
 		        $('#page-content-wrapper').fadeIn('medium');
+		        if(id=="section2"){
+		        	draw_top_subreddits_graph('#top_subreddits_graph');
+		        }
 		    });
 		});
     }
     
     $(".section").click(function(){
 	     var id = this.id;
-	    fadeContent(id+".html");
+	    fadeContent(id);
 	    current_section =  parseInt(id.substring(7));
 	});      
     
