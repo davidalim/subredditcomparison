@@ -26,40 +26,72 @@
 		                    <ul>
 		                        <li style="background-color: #bbbbbb;">
 		                        	<div class="list-content">
-			                        	<h2>Theory</h2>
+			                        	<h2>The Plan</h2>
 			                        	<p>
 			                        		Now that we've looked at the users who make up the Christianity and Islam
-			                        		subreddit communities, it's time to compare the communities as a whole. For this
-			                        		analysis, we agregate the statistics that we've gathered from the individual 
-			                        		users and use it to represent the subreddit communities. 
+			                        		subreddit communities, it's time to compare the communities as a whole. Instead
+			                        		of creating a network where users are connected to other users who share
+			                        		the same subreddits, we create a network of subreddits, where subreddits are
+			                        		connected to other subreddits who share a user. For instance, the graph on the
+			                        		right shows the Christianity subreddit (large blue) and the Islam subreddit
+			                        		(large red) connected to other subreddit that they share at least 50 users
+			                        		with. The purple are the ones that the Christianity and Islam subreddits have 
+			                        		in common.
+			                        	<h2>Centrality</h2>
+			                        	<p>
+			                        		If we create a network where <i>all</i> of the subreddits are connected
+			                        		to one another based on shared users, we can use 
+			                        		<a href="https://en.wikipedia.org/wiki/Centrality" target="blank">
+			                        			centrality
+			                        		</a>
+			                        		to find the the most important subreddits in the graph. Specifically we
+			                        		can use 
+			                        		<a href="https://en.wikipedia.org/wiki/Centrality#Degree_centrality" target="blank">
+			                        			degree centrality
+			                        		</a>
+			                        		which determines a subreddit to be important based on the number of links it
+			                        		has.
+			                        	<p>
+			                        		With centrality, we can find the subreddits that are most important to the 
+			                        		Islam users, and then the ones that are most important to the Christianity users,
+			                        		and compare the two.
 			                        		
 		                        	</div>
 		                        </li>
 		                        <li style="background-color: #dddddd;">
 		                        	<div class="list-content">
 			                        	<h2>Christianity Central Subreddits</h2>
-			                        	<h4>SubTitle</h4>
-			                        	<h5>afadsfsdaf</h5>
-			                        	<h5>afadsfsdaf</h5>
-			                        	<h5>afadsfsdaf</h5>
+			                        	<p>
+			                        		To find the most important subreddits to the Chrisianity communitiy,
+			                        		we create a graph of subreddits that are connected by Christianity users and
+			                        		find the ones with the highest degree centrality. To the right is a graph that
+			                        		displays the top 50 central subreddits and how they are connect. Below it
+			                        		list the names of the subreddits, ranked by centrality. 
+			                        	<p>
+			                        		The top five are <b>Christianity</b>, <b>AskReddit</b>, <b>pics</b>,  
+			                        		<b>funny</b> and <b>todayilearned</b>.
+			                        		
 		                        	</div>
 		                        </li>
 		                        <li style="background-color: #bbbbbb;">
 		                        	<div class="list-content">
 		                        	<h2>Islam Central Subreddits</h2>
-		                        	<h4>SubTitle</h4>
-		                        	<h5>afadsfsdaf</h5>
-		                        	<h5>afadsfsdaf</h5>
-		                        	<h5>afadsfsdaf</h5>
+		                        	<p>
+		                        		Here we perform the same task, but with subreddits that are connected by the 
+		                        		Islam users. 
+		                        	<p>
+		                        		The top five are <b>AskReddit</b>, <b>pics</b>, <b>funny</b>, <b>todayilearned</b> and <b>worldnews</b>
 		                        	</div>
 		                        </li>		                        
 		                        <li style="background-color: #dddddd;">
 		                        	<div class="list-content">
 		                        	<h2>Overlapping Central Subreddits</h2>
-		                        	<h4>SubTitle</h4>
-		                        	<h5>afadsfsdaf</h5>
-		                        	<h5>afadsfsdaf</h5>
-		                        	<h5>afadsfsdaf</h5>
+		                        	<p>
+		                        		Now that we have the top 50 central subreddits for but the Christianity and Islam
+		                        		user, we can take a look at the ones they share and the ones they do not share. 
+		                        		These are shown to the right (Christianity - blue, Islam - red, Shared - purple).
+		                        		It turns out, that 40 out of the 50 most central subreddits from each community
+		                        		overlap!  
 		                        	</div>
 		                        </li>
 		                    </ul>
